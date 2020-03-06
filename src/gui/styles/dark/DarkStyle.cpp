@@ -66,13 +66,13 @@ void DarkStyle::polish(QPalette& palette)
     palette.setColor(QPalette::Inactive, QPalette::ButtonText, QStringLiteral("#9E9FA5"));
     palette.setColor(QPalette::Disabled, QPalette::ButtonText, QStringLiteral("#73747E"));
 
-    palette.setColor(QPalette::Active, QPalette::Highlight, QStringLiteral("#2D532D"));
-    palette.setColor(QPalette::Inactive, QPalette::Highlight, QStringLiteral("#294C29"));
-    palette.setColor(QPalette::Disabled, QPalette::Highlight, QStringLiteral("#293D29"));
+    palette.setColor(QPalette::Active, QPalette::Highlight, QStringLiteral("#295129"));
+    palette.setColor(QPalette::Inactive, QPalette::Highlight, QStringLiteral("#2C532C"));
+    palette.setColor(QPalette::Disabled, QPalette::Highlight, QStringLiteral("#385238"));
 
     palette.setColor(QPalette::Active, QPalette::HighlightedText, QStringLiteral("#CCCCCC"));
-    palette.setColor(QPalette::Inactive, QPalette::HighlightedText, QStringLiteral("#C7C7C7"));
-    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, QStringLiteral("#707070"));
+    palette.setColor(QPalette::Inactive, QPalette::HighlightedText, QStringLiteral("#CECECE"));
+    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, QStringLiteral("#A3A3A3"));
 
     palette.setColor(QPalette::All, QPalette::Light, QStringLiteral("#414145"));
     palette.setColor(QPalette::All, QPalette::Midlight, QStringLiteral("#39393C"));
@@ -80,10 +80,10 @@ void DarkStyle::polish(QPalette& palette)
     palette.setColor(QPalette::All, QPalette::Dark, QStringLiteral("#202022"));
     palette.setColor(QPalette::All, QPalette::Shadow, QStringLiteral("#19191A"));
 
-    palette.setColor(QPalette::All, QPalette::Link, QStringLiteral("#6BAE6B"));
-    palette.setColor(QPalette::Disabled, QPalette::Link, QStringLiteral("#9DE9D"));
-    palette.setColor(QPalette::All, QPalette::LinkVisited, QStringLiteral("#70A970"));
-    palette.setColor(QPalette::Disabled, QPalette::LinkVisited, QStringLiteral("#98A998"));
+    palette.setColor(QPalette::All, QPalette::Link, QStringLiteral("#68B668"));
+    palette.setColor(QPalette::Disabled, QPalette::Link, QStringLiteral("#74A474"));
+    palette.setColor(QPalette::All, QPalette::LinkVisited, QStringLiteral("#75B875"));
+    palette.setColor(QPalette::Disabled, QPalette::LinkVisited, QStringLiteral("#77A677"));
 }
 
 QString DarkStyle::getAppStyleSheet() const
