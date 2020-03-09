@@ -20,7 +20,7 @@
 
 #include "core/AsyncTask.h"
 #include "core/Database.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/Group.h"
 #include "core/PasswordHealth.h"
 
@@ -102,7 +102,7 @@ Health::Health(QSharedPointer<Database> db)
 ReportsWidgetHealthcheck::ReportsWidgetHealthcheck(QWidget* parent)
     : QWidget(parent)
     , m_ui(new Ui::ReportsWidgetHealthcheck())
-    , m_errorIcon(FilePath::instance()->icon("status", "dialog-error"))
+    , m_errorIcon(Resources::instance()->icon("dialog-error"))
 {
     m_ui->setupUi(this);
 

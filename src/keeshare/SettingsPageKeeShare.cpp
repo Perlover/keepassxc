@@ -18,7 +18,7 @@
 #include "SettingsPageKeeShare.h"
 
 #include "core/Database.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/Group.h"
 #include "gui/DatabaseTabWidget.h"
 #include "gui/MessageWidget.h"
@@ -39,7 +39,7 @@ QString SettingsPageKeeShare::name()
 
 QIcon SettingsPageKeeShare::icon()
 {
-    return FilePath::instance()->icon("apps", "preferences-system-network-sharing");
+    return Resources::instance()->icon("preferences-system-network-sharing");
 }
 
 QWidget* SettingsPageKeeShare::createWidget()

@@ -21,7 +21,7 @@
 
 #include "core/Config.h"
 #include "core/Database.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "crypto/Random.h"
 #include "format/KeePass2Reader.h"
 #include "gui/FileDialog.h"
@@ -56,7 +56,7 @@ DatabaseOpenWidget::DatabaseOpenWidget(QWidget* parent)
 
     m_ui->comboKeyFile->lineEdit()->addAction(m_ui->keyFileClearIcon, QLineEdit::TrailingPosition);
 
-    m_ui->buttonTogglePassword->setIcon(filePath()->onOffIcon("actions", "password-show"));
+    m_ui->buttonTogglePassword->setIcon(resources()->onOffIcon("password-show"));
     connect(m_ui->buttonTogglePassword, SIGNAL(toggled(bool)), m_ui->editPassword, SLOT(setShowPassword(bool)));
     connect(m_ui->buttonTogglePassword, SIGNAL(toggled(bool)), m_ui->editPassword, SLOT(setFocus()));
     connect(m_ui->buttonBrowseFile, SIGNAL(clicked()), SLOT(browseKeyFile()));
@@ -64,14 +64,14 @@ DatabaseOpenWidget::DatabaseOpenWidget(QWidget* parent)
     connect(m_ui->buttonBox, SIGNAL(accepted()), SLOT(openDatabase()));
     connect(m_ui->buttonBox, SIGNAL(rejected()), SLOT(reject()));
 
-    m_ui->hardwareKeyLabelHelp->setIcon(filePath()->icon("actions", "system-help").pixmap(QSize(12, 12)));
+    m_ui->hardwareKeyLabelHelp->setIcon(resources()->icon("system-help").pixmap(QSize(12, 12)));
     connect(m_ui->hardwareKeyLabelHelp, SIGNAL(clicked(bool)), SLOT(openHardwareKeyHelp()));
-    m_ui->keyFileLabelHelp->setIcon(filePath()->icon("actions", "system-help").pixmap(QSize(12, 12)));
+    m_ui->keyFileLabelHelp->setIcon(resources()->icon("system-help").pixmap(QSize(12, 12)));
     connect(m_ui->keyFileLabelHelp, SIGNAL(clicked(bool)), SLOT(openKeyFileHelp()));
 
     connect(m_ui->comboKeyFile->lineEdit(), SIGNAL(textChanged(QString)), SLOT(handleKeyFileComboEdited()));
     connect(m_ui->comboKeyFile, SIGNAL(currentIndexChanged(int)), SLOT(handleKeyFileComboChanged()));
-    m_ui->keyFileClearIcon->setIcon(filePath()->icon("actions", "edit-clear-locationbar-rtl"));
+    m_ui->keyFileClearIcon->setIcon(resources()->icon("edit-clear-locationbar-rtl"));
     m_ui->keyFileClearIcon->setVisible(false);
     connect(m_ui->keyFileClearIcon, SIGNAL(triggered(bool)), SLOT(clearKeyFileEdit()));
 

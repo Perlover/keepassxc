@@ -18,7 +18,7 @@
 #include "PasswordEditWidget.h"
 #include "ui_PasswordEditWidget.h"
 
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "gui/PasswordGeneratorWidget.h"
 #include "keys/CompositeKey.h"
 #include "keys/PasswordKey.h"
@@ -73,8 +73,8 @@ QWidget* PasswordEditWidget::componentEditWidget()
 {
     m_compEditWidget = new QWidget();
     m_compUi->setupUi(m_compEditWidget);
-    m_compUi->togglePasswordButton->setIcon(filePath()->onOffIcon("actions", "password-show"));
-    m_compUi->passwordGeneratorButton->setIcon(filePath()->icon("actions", "password-generator"));
+    m_compUi->togglePasswordButton->setIcon(resources()->onOffIcon("password-show"));
+    m_compUi->passwordGeneratorButton->setIcon(resources()->icon("password-generator"));
     m_compUi->repeatPasswordEdit->enableVerifyMode(m_compUi->enterPasswordEdit);
 
     connect(m_compUi->togglePasswordButton,

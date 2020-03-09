@@ -31,7 +31,7 @@
 #include "core/Config.h"
 #include "core/Database.h"
 #include "core/Entry.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/Group.h"
 #include "core/ListDeleter.h"
 #include "core/Tools.h"
@@ -63,7 +63,7 @@ AutoType::AutoType(QObject* parent, bool test)
         pluginName += "test";
     }
 
-    QString pluginPath = filePath()->pluginPath(pluginName);
+    QString pluginPath = resources()->pluginPath(pluginName);
 
     if (!pluginPath.isEmpty()) {
 #ifdef WITH_XC_AUTOTYPE

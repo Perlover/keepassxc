@@ -21,7 +21,7 @@
 #include "NewDatabaseWizardPageMetaData.h"
 
 #include "core/Database.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/Global.h"
 #include "core/Group.h"
 #include "format/KeePass2.h"
@@ -48,7 +48,8 @@ NewDatabaseWizard::NewDatabaseWizard(QWidget* parent)
 
     setWindowTitle(tr("Create a new KeePassXC database..."));
 
-    setPixmap(QWizard::BackgroundPixmap, QPixmap(filePath()->dataPath("wizard/background-pixmap.png")));
+    Q_INIT_RESOURCE(wizard);
+    setPixmap(QWizard::BackgroundPixmap, QPixmap(":/wizard/background-pixmap.png"));
 }
 
 NewDatabaseWizard::~NewDatabaseWizard()

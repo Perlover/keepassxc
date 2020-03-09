@@ -19,7 +19,7 @@
 #include "PasswordEdit.h"
 
 #include "core/Config.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "gui/Font.h"
 
 const QColor PasswordEdit::CorrectSoFarColor = QColor(255, 205, 15);
@@ -29,12 +29,12 @@ PasswordEdit::PasswordEdit(QWidget* parent)
     : QLineEdit(parent)
     , m_basePasswordEdit(nullptr)
 {
-    const QIcon errorIcon = filePath()->icon("status", "dialog-error");
+    const QIcon errorIcon = resources()->icon("dialog-error");
     m_errorAction = addAction(errorIcon, QLineEdit::TrailingPosition);
     m_errorAction->setVisible(false);
     m_errorAction->setToolTip(tr("Passwords do not match"));
 
-    const QIcon correctIcon = filePath()->icon("actions", "dialog-ok");
+    const QIcon correctIcon = resources()->icon("dialog-ok");
     m_correctAction = addAction(correctIcon, QLineEdit::TrailingPosition);
     m_correctAction->setVisible(false);
     m_correctAction->setToolTip(tr("Passwords match so far"));

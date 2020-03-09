@@ -20,7 +20,7 @@
 
 #include "core/Config.h"
 #include "core/CustomData.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/Group.h"
 #include "core/Metadata.h"
 #include "crypto/ssh/OpenSSHKey.h"
@@ -36,8 +36,8 @@ EditGroupWidgetKeeShare::EditGroupWidgetKeeShare(QWidget* parent)
 {
     m_ui->setupUi(this);
 
-    m_ui->togglePasswordButton->setIcon(filePath()->onOffIcon("actions", "password-show"));
-    m_ui->togglePasswordGeneratorButton->setIcon(filePath()->icon("actions", "password-generator"));
+    m_ui->togglePasswordButton->setIcon(resources()->onOffIcon("password-show"));
+    m_ui->togglePasswordGeneratorButton->setIcon(resources()->icon("password-generator"));
 
     m_ui->passwordGenerator->layout()->setContentsMargins(0, 0, 0, 0);
     m_ui->passwordGenerator->hide();

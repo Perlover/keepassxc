@@ -24,7 +24,7 @@
 #include <QLineEdit>
 
 #include "core/Config.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/PasswordGenerator.h"
 #include "core/PasswordHealth.h"
 #include "gui/Clipboard.h"
@@ -39,7 +39,7 @@ PasswordGeneratorWidget::PasswordGeneratorWidget(QWidget* parent)
 {
     m_ui->setupUi(this);
 
-    m_ui->togglePasswordButton->setIcon(filePath()->onOffIcon("actions", "password-show"));
+    m_ui->togglePasswordButton->setIcon(resources()->onOffIcon("password-show"));
 
     connect(m_ui->editNewPassword, SIGNAL(textChanged(QString)), SLOT(updateButtonsEnabled(QString)));
     connect(m_ui->editNewPassword, SIGNAL(textChanged(QString)), SLOT(updatePasswordStrength(QString)));
@@ -82,7 +82,7 @@ PasswordGeneratorWidget::PasswordGeneratorWidget(QWidget* parent)
     m_ui->wordCaseComboBox->addItem(tr("UPPER CASE"), PassphraseGenerator::UPPERCASE);
     m_ui->wordCaseComboBox->addItem(tr("Title Case"), PassphraseGenerator::TITLECASE);
 
-    QDir path(filePath()->wordlistPath(""));
+    QDir path(resources()->wordlistPath(""));
     QStringList files = path.entryList(QDir::Files);
     m_ui->comboBoxWordList->addItems(files);
     if (files.size() > 1) {
@@ -590,7 +590,7 @@ void PasswordGeneratorWidget::updateGenerator()
 
         m_dicewareGenerator->setWordCount(m_ui->spinBoxWordCount->value());
         if (!m_ui->comboBoxWordList->currentText().isEmpty()) {
-            QString path = filePath()->wordlistPath(m_ui->comboBoxWordList->currentText());
+            QString path = resources()->wordlistPath(m_ui->comboBoxWordList->currentText());
             m_dicewareGenerator->setWordList(path);
         }
         m_dicewareGenerator->setWordSeparator(m_ui->editWordSeparator->text());

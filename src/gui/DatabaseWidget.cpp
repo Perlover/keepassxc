@@ -35,7 +35,7 @@
 #include "core/Config.h"
 #include "core/Database.h"
 #include "core/EntrySearcher.h"
-#include "core/FilePath.h"
+#include "core/Resources.h"
 #include "core/FileWatcher.h"
 #include "core/Group.h"
 #include "core/Merger.h"
