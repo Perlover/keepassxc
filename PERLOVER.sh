@@ -9,5 +9,5 @@ mkdir build
 cd build
 #cmake -DWITH_XC_ALL=ON -DWITH_XC_NETWORKING=OFF -DWITH_XC_UPDATECHECK=OFF -DCMAKE_PREFIX_PATH=/usr/bin/cmake -DCMAKE_INSTALL_PREFIX=~/.local ..
 
-cmake -DWITH_XC_ALL=ON -DCMAKE_PREFIX_PATH=/usr/bin/cmake -DCMAKE_INSTALL_PREFIX=~/opt/KeePassXC ..
+cmake -DWITH_XC_ALL=ON -DCMAKE_PREFIX_PATH=/usr/bin/cmake -DKEEPASSXC_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/opt/KeePassXC ..
 make -j12 install
