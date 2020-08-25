@@ -48,6 +48,7 @@ public:
     static bool checkHighDelay(const QString& string);
     static bool verifyAutoTypeSyntax(const QString& sequence);
     void performAutoType(const Entry* entry, QWidget* hideWindow = nullptr);
+    void performAutoTypeWithSequence(const Entry* entry, const QString& sequence, QWidget* hideWindow = nullptr);
 
     inline bool isAvailable()
     {
@@ -73,6 +74,13 @@ private slots:
     void unloadPlugin();
 
 private:
+    enum WindowState
+    {
+        Normal,
+        Minimized,
+        Hidden
+    };
+
     explicit AutoType(QObject* parent = nullptr, bool test = false);
     ~AutoType() override;
     void loadPlugin(const QString& pluginPath);
@@ -86,6 +94,7 @@ private:
     bool windowMatchesTitle(const QString& windowTitle, const QString& resolvedTitle);
     bool windowMatchesUrl(const QString& windowTitle, const QString& resolvedUrl);
     bool windowMatches(const QString& windowTitle, const QString& windowPattern);
+    void restoreWindowState();
 
     QMutex m_inAutoType;
     QMutex m_inGlobalAutoTypeDialog;
@@ -98,6 +107,7 @@ private:
     static AutoType* m_instance;
 
     QString m_windowTitleForGlobal;
+    WindowState m_windowState;
     WId m_windowForGlobal;
 
     Q_DISABLE_COPY(AutoType)

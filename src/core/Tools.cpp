@@ -113,8 +113,9 @@ namespace Tools
         extensions += "\n- " + QObject::tr("Secret Service Integration");
 #endif
 
-        if (extensions.isEmpty())
+        if (extensions.isEmpty()) {
             extensions = " " + QObject::tr("None");
+        }
 
         debugInfo.append(QObject::tr("Enabled extensions:").append(extensions).append("\n"));
         return debugInfo;
@@ -322,6 +323,33 @@ namespace Tools
     QUuid hexToUuid(const QString& uuid)
     {
         return QUuid::fromRfc4122(QByteArray::fromHex(uuid.toLatin1()));
+    }
+
+    QString envSubstitute(const QString& filepath, QProcessEnvironment environment)
+    {
+        QString subbed = filepath;
+
+#if defined(Q_OS_WIN)
+        QRegularExpression varRe("\\%([A-Za-z][A-Za-z0-9_]*)\\%");
+        QString homeEnv = "USERPROFILE";
+#else
+        QRegularExpression varRe("\\$([A-Za-z][A-Za-z0-9_]*)");
+        QString homeEnv = "HOME";
+#endif
+
+        if (subbed.startsWith("~/") || subbed.startsWith("~\\"))
+            subbed.replace(0, 1, environment.value(homeEnv));
+
+        QRegularExpressionMatch match;
+
+        do {
+            match = varRe.match(subbed);
+            if (match.hasMatch()) {
+                subbed.replace(match.capturedStart(), match.capturedLength(), environment.value(match.captured(1)));
+            }
+        } while (match.hasMatch());
+
+        return subbed;
     }
 
     Buffer::Buffer()

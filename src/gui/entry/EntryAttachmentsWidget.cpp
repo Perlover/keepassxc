@@ -40,9 +40,7 @@ EntryAttachmentsWidget::EntryAttachmentsWidget(QWidget* parent)
     m_ui->attachmentsView->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_ui->attachmentsView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-    m_ui->actionsWidget->setVisible(m_buttonsVisible);
-    connect(this, SIGNAL(buttonsVisibleChanged(bool)), m_ui->actionsWidget, SLOT(setVisible(bool)));
-
+    connect(this, SIGNAL(buttonsVisibleChanged(bool)), this, SLOT(updateButtonsVisible()));
     connect(this, SIGNAL(readOnlyChanged(bool)), SLOT(updateButtonsEnabled()));
     connect(m_attachmentsModel, SIGNAL(modelReset()), SLOT(updateButtonsEnabled()));
 
@@ -58,6 +56,7 @@ EntryAttachmentsWidget::EntryAttachmentsWidget(QWidget* parent)
     connect(m_ui->addAttachmentButton, SIGNAL(clicked()), SLOT(insertAttachments()));
     connect(m_ui->removeAttachmentButton, SIGNAL(clicked()), SLOT(removeSelectedAttachments()));
 
+    updateButtonsVisible();
     updateButtonsEnabled();
 }
 
@@ -135,21 +134,23 @@ void EntryAttachmentsWidget::insertAttachments()
         return;
     }
 
-    QString defaultDirPath = config()->get("LastAttachmentDir").toString();
+    QString defaultDirPath = config()->get(Config::LastAttachmentDir).toString();
     const bool dirExists = !defaultDirPath.isEmpty() && QDir(defaultDirPath).exists();
     if (!dirExists) {
         defaultDirPath = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
     }
 
-    const QStringList filenames = fileDialog()->getOpenFileNames(this, tr("Select files"), defaultDirPath);
+    const auto filenames = fileDialog()->getOpenFileNames(this, tr("Select files"), defaultDirPath);
     if (filenames.isEmpty()) {
         return;
     }
-
-    config()->set("LastAttachmentDir", QFileInfo(filenames.first()).absolutePath());
-
+    const auto confirmedFileNames = confirmLargeAttachments(filenames);
+    if (confirmedFileNames.isEmpty()) {
+        return;
+    }
+    config()->set(Config::LastAttachmentDir, QFileInfo(filenames.first()).absolutePath());
     QString errorMessage;
-    if (!insertAttachments(filenames, errorMessage)) {
+    if (!insertAttachments(confirmedFileNames, errorMessage)) {
         errorOccurred(errorMessage);
     }
     emit widgetUpdated();
@@ -190,7 +191,7 @@ void EntryAttachmentsWidget::saveSelectedAttachments()
         return;
     }
 
-    QString defaultDirPath = config()->get("LastAttachmentDir").toString();
+    QString defaultDirPath = config()->get(Config::LastAttachmentDir).toString();
     const bool dirExists = !defaultDirPath.isEmpty() && QDir(defaultDirPath).exists();
     if (!dirExists) {
         defaultDirPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -208,7 +209,7 @@ void EntryAttachmentsWidget::saveSelectedAttachments()
             return;
         }
     }
-    config()->set("LastAttachmentDir", QFileInfo(saveDir.absolutePath()).absolutePath());
+    config()->set(Config::LastAttachmentDir, QFileInfo(saveDir.absolutePath()).absolutePath());
 
     QStringList errors;
     for (const QModelIndex& index : indexes) {
@@ -293,6 +294,12 @@ void EntryAttachmentsWidget::updateButtonsEnabled()
     m_ui->openAttachmentButton->setEnabled(hasSelection);
 }
 
+void EntryAttachmentsWidget::updateButtonsVisible()
+{
+    m_ui->addAttachmentButton->setVisible(m_buttonsVisible && !m_readOnly);
+    m_ui->removeAttachmentButton->setVisible(m_buttonsVisible && !m_readOnly);
+}
+
 bool EntryAttachmentsWidget::insertAttachments(const QStringList& filenames, QString& errorMessage)
 {
     Q_ASSERT(!isReadOnly());
@@ -351,6 +358,33 @@ bool EntryAttachmentsWidget::openAttachment(const QModelIndex& index, QString& e
     // take ownership of the tmpFile pointer
     tmpFile.take();
     return true;
+}
+
+QStringList EntryAttachmentsWidget::confirmLargeAttachments(const QStringList& filenames)
+{
+    const QString confirmation(tr("%1 is a big file (%2 MB).\nYour database may get very large and reduce "
+                                  "performance.\n\nAre you sure to add this file?"));
+    QStringList confirmedFileNames;
+    for (const auto& file : filenames) {
+        QFileInfo fileInfo(file);
+        double size = fileInfo.size() / (1024.0 * 1024.0);
+        // Ask for confirmation before adding files over 5 MB in size
+        if (size > 5.0) {
+            auto fileName = fileInfo.fileName();
+            auto result = MessageBox::question(this,
+                                               tr("Confirm Attachment"),
+                                               confirmation.arg(fileName, QString::number(size, 'f', 1)),
+                                               MessageBox::Yes | MessageBox::No,
+                                               MessageBox::No);
+            if (result == MessageBox::Yes) {
+                confirmedFileNames << file;
+            }
+        } else {
+            confirmedFileNames << file;
+        }
+    }
+
+    return confirmedFileNames;
 }
 
 bool EntryAttachmentsWidget::eventFilter(QObject* watched, QEvent* e)
