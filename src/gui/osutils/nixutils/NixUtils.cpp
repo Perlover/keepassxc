@@ -62,6 +62,12 @@ bool NixUtils::isDarkMode() const
     return qApp->style()->standardPalette().color(QPalette::Window).toHsl().lightness() < 110;
 }
 
+bool NixUtils::isStatusBarDark() const
+{
+    // TODO: implement
+    return isDarkMode();
+}
+
 QString NixUtils::getAutostartDesktopFilename(bool createDirs) const
 {
     QDir autostartDir;
@@ -92,22 +98,29 @@ void NixUtils::setLaunchAtStartup(bool enable)
             qWarning("Failed to create autostart desktop file.");
             return;
         }
+
+        const QString appImagePath = QString::fromLocal8Bit(qgetenv("APPIMAGE"));
+        const bool isAppImage = !appImagePath.isNull() && QFile::exists(appImagePath);
+        const QString executeablePath = isAppImage ? appImagePath : QApplication::applicationFilePath();
+
         QTextStream stream(&desktopFile);
         stream.setCodec("UTF-8");
         stream << QStringLiteral("[Desktop Entry]") << '\n'
                << QStringLiteral("Name=") << QApplication::applicationDisplayName() << '\n'
                << QStringLiteral("GenericName=") << tr("Password Manager") << '\n'
-               << QStringLiteral("Exec=") << QApplication::applicationFilePath() << '\n'
-               << QStringLiteral("TryExec=") << QApplication::applicationFilePath() << '\n'
+               << QStringLiteral("Exec=") << executeablePath << '\n'
+               << QStringLiteral("TryExec=") << executeablePath << '\n'
                << QStringLiteral("Icon=") << QApplication::applicationName().toLower() << '\n'
                << QStringLiteral("StartupWMClass=keepassxc") << '\n'
                << QStringLiteral("StartupNotify=true") << '\n'
                << QStringLiteral("Terminal=false") << '\n'
                << QStringLiteral("Type=Application") << '\n'
-               << QStringLiteral("Version=1.0") << "true" << '\n'
+               << QStringLiteral("Version=1.0") << '\n'
                << QStringLiteral("Categories=Utility;Security;Qt;") << '\n'
                << QStringLiteral("MimeType=application/x-keepass2;") << '\n'
-               << QStringLiteral("X-GNOME-Autostart-enabled=true") << endl;
+               << QStringLiteral("X-GNOME-Autostart-enabled=true") << '\n'
+               << QStringLiteral("X-GNOME-Autostart-Delay=2") << '\n'
+               << QStringLiteral("X-KDE-autostart-after=panel") << endl;
         desktopFile.close();
     } else if (isLaunchAtStartupEnabled()) {
         QFile::remove(getAutostartDesktopFilename());

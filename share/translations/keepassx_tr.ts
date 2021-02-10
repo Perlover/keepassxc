@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>Renkli</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation>Yeni dili ayarlamak için uygulamayı yeniden başlatmalısınız. Şimdi yeniden başlamak ister misin?</translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>Her değişiklik sonrası otomatik kaydet</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>Çıkışta otomatik kaydet</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -305,10 +305,6 @@
         <translation>Sistem başlangıcında KeePassXC&apos;yi otomatik olarak başlat</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>Veritabanında veri olmayan değişiklikler için değiştirilmiş olarak işaretleme (ör. genişleyen gruplar)</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>Veritabanı dosyalarını güvenle kaydet (Dropbox, vb. İle ilgili sorun olursa devre dışı bırak)</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>Otomatik Yazım başlangıç gecikmesi:</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation>Veritabanını kilitlerken otomatik kaydet</translation>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation>Veritabanını kilitlerken veri dışı değişiklikleri otomatik olarak kaydet</translation>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation>Tepsi simgesi türü</translation>
     </message>
 </context>
 <context>
@@ -1106,6 +1114,14 @@ linux-laptop.</translation>
         <source>Column %1</source>
         <translation>Sütun %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Simge</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1203,20 +1219,6 @@ Yedek veritabanının konumu %2</translation>
         <translation>Yenile</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Eski anahtar dosya biçimi</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>İleride desteklenmeyebilecek eski bir anahtar 
-dosya biçimi kullanıyorsunuz. 
-
-Lütfen yeni bir anahtar dosyası oluşturmayı düşünün.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>Bu uyarıyı bir daha gösterme</translation>
     </message>
@@ -1275,14 +1277,6 @@ Lütfen yeni bir anahtar dosyası oluşturmayı düşünün.</translation>
     <message>
         <source>TouchID for Quick Unlock</source>
         <translation>Hızlı Kilit Açma için TouchID</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Temizle</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>Anahtar Dosyasını Temizle</translation>
     </message>
     <message>
         <source>Unlock failed and no password given</source>
@@ -1353,6 +1347,14 @@ Bir anahtar dosyanız yoksa, lütfen alanı boş bırakınız.</translation>
     <message>
         <source>Select hardware key…</source>
         <translation>Donanım anahtarı seçin...</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2287,6 +2289,15 @@ Güvenli kaydetme devre dışı bırakılsın ve tekrar denensin mi?</translatio
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[KORUMALI] Görmek veya düzenlemek için Göster e basın</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2606,6 +2617,10 @@ Güvenli kaydetme devre dışı bırakılsın ve tekrar denensin mi?</translatio
         <source>Expires:</source>
         <translation>Son Kul.Tarihi:</translation>
     </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetSSHAgent</name>
@@ -2905,6 +2920,10 @@ Desteklenen eklentiler: %1.</translation>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>Varsayılan Oto-Yazım sırasını ayarla</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3406,11 +3425,6 @@ Bu dosyayı eklemek istediğinize emin misiniz?</translation>
         <translation>[KORUMALI]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Etkin</translation>
     </message>
@@ -3430,6 +3444,15 @@ Bu dosyayı eklemek istediğinize emin misiniz?</translation>
         <source>Advanced</source>
         <translation>Gelişmiş</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3440,18 +3463,6 @@ Bu dosyayı eklemek istediğinize emin misiniz?</translation>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>Görünümü Özelleştir</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>Kullanıcı Adlarını Gizle</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>Parolaları Gizle</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>Pencereye sığdır</translation>
@@ -3484,14 +3495,14 @@ Bu dosyayı eklemek istediğinize emin misiniz?</translation>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>%1 deki DBus servisi tescil edilemedi.&lt;br/&gt;</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%n Girdi %1 tarafından kullanıldı</numerusform><numerusform>%n Girdi %1 tarafından kullanıldı</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>%1 deki DBus servisi tescil edilemedi.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -4317,10 +4328,6 @@ Bu yeniden oluşursa, veritabanı dosyanız bozuk olabilir.</translation>
         <translation>&lt;p&gt;Ek güvenlik için rasgele bayt içeren bir anahtar dosyası ekleyebilirsiniz.&lt;/p&gt;&lt;p&gt;Gizli tutmalı ve asla kaybetmemelisin yoksa kilitleneceksin!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Eski anahtar dosya biçimi</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>&apos;%1&apos; anahtar dosyası yüklenirken hata
@@ -4389,14 +4396,12 @@ Are you sure you want to continue with this file?</source>
 Bu dosyaya devam etmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>İleride desteklenmeyebilecek eski bir anahtar 
-dosya biçimi kullanıyorsunuz. 
-
-Veritabanı güvenlik ayarlarında yeni bir anahtar dosyası oluşturun.</translation>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4517,7 +4522,7 @@ Keepassxc indirme sayfasında mevcut Appımage kullanmanızı öneririz.</transl
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>&amp;İçe aktar</translation>
+        <translation>&amp;İçe Aktar</translation>
     </message>
     <message>
         <source>Create a new database</source>
@@ -4541,7 +4546,7 @@ Keepassxc indirme sayfasında mevcut Appımage kullanmanızı öneririz.</transl
     </message>
     <message>
         <source>Perform &amp;Auto-Type</source>
-        <translation>&amp;Otomatik Yazım gerçekleştir</translation>
+        <translation>&amp;Otomatik Yazım Gerçekleştir</translation>
     </message>
     <message>
         <source>Open &amp;URL</source>
@@ -4575,7 +4580,7 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Dışa &amp;aktar</translation>
+        <translation>Dışa &amp;Aktar</translation>
     </message>
     <message>
         <source>Sort &amp;A-Z</source>
@@ -4803,7 +4808,7 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
     </message>
     <message>
         <source>Compact Mode</source>
-        <translation>Küçültülmüş kip</translation>
+        <translation>Küçültülmüş Kip</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -4819,7 +4824,7 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
     </message>
     <message>
         <source>Classic (Platform-native)</source>
-        <translation>Klasik (Platform-doğal)</translation>
+        <translation>Klasik (Doğal sistem)</translation>
     </message>
     <message>
         <source>Show Toolbar</source>
@@ -4840,6 +4845,38 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
     <message>
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>Bu ayarı uygulamak için uygulamayı yeniden başlatmalısınız. Şimdi uygulamayı yeniden başlatmak ister misiniz ?</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation>Otomatik Yazım Sırası</translation>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation>{KULLANICI ADI}</translation>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation>{KULLANICI ADI}{ENTER}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation>{PAROLA}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation>{PAROLA}{ENTER}</translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>Kullanıcı Adlarını Gizle</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>Parolaları Gizle</translation>
     </message>
 </context>
 <context>
@@ -5326,10 +5363,6 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
         <translation>Harika</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>GenişletilmişASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>Gelişmiş kipe geç</translation>
     </message>
@@ -5338,56 +5371,20 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
         <translation>Gelişmiş</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Z</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-z</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>Ayraç</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>Noktalama</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>Tırnak</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!?=</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>Logogramlar</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5502,12 +5499,12 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Temizle</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>Parolayı tekrar üret (%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>Özel Karakterler</translation>
     </message>
 </context>
 <context>
@@ -5746,16 +5743,6 @@ Bazı hatalar ve küçük sorunlar olabilir, bu sürüm şu an dağıtımda değ
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>Parola üzerinde gelişmiş inceleme gerçekleştir.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>UYARI: Gelecekte desteklenmeyebilecek eski anahtar dosyası
-biçimini kullanıyorsunuz.
-
-Lütfen yeni anahtar dosyası oluşturmayı düşünün.</translation>
     </message>
     <message>
         <source>
@@ -6145,10 +6132,6 @@ Kullanılabilir komutlar:
         <translation>%1: (satır, sütun) %2,%3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – önerilen)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6237,10 +6220,6 @@ Kullanılabilir komutlar:
     <message>
         <source>read password of the database from stdin</source>
         <translation>veritabanının parolasını stdin&apos;den oku</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>Ana pencere işlemesi</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6729,10 +6708,6 @@ MİB mimarisi: %2
         <translation>AES (%1 çevrim)</translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2 (%1 çevrim, %2 KB)</translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation>AES 256-bit</translation>
     </message>
@@ -6757,6 +6732,49 @@ MİB mimarisi: %2
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1 s</numerusform><numerusform>%1 s</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Simge</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7181,10 +7199,6 @@ Girdiyi düzenlemek için tıkla.</translation>
     <message>
         <source>Search</source>
         <translation>Ara</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Temizle</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

@@ -20,15 +20,18 @@
 #include "DatabaseWidget.h"
 #include "core/Database.h"
 
+#ifdef Q_OS_WIN
+#include <QtPlatformHeaders/QWindowsWindowFunctions>
+#endif
+
 DatabaseOpenDialog::DatabaseOpenDialog(QWidget* parent)
     : QDialog(parent)
     , m_view(new DatabaseOpenWidget(this))
 {
     setWindowTitle(tr("Unlock Database - KeePassXC"));
-#ifdef Q_OS_MACOS
-    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
-#else
-    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint | Qt::ForeignWindow);
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint);
+#ifdef Q_OS_WIN
+    QWindowsWindowFunctions::setWindowActivationBehavior(QWindowsWindowFunctions::AlwaysActivateWindow);
 #endif
     connect(m_view, SIGNAL(dialogFinished(bool)), this, SLOT(complete(bool)));
     auto* layout = new QVBoxLayout();

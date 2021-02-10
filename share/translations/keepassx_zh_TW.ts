@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>彩色</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation>必須重啟應用程式以使用新語言。您是否要現在重新啟動？</translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>每次修改後自動儲存</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>離開時自動儲存</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <source>Remember database key files and security dongles</source>
-        <translation>記住資料庫的金鑰檔與 dongle 軟體狗</translation>
+        <translation>記住資料庫的金鑰檔與硬體金鑰</translation>
     </message>
     <message>
         <source>Check for updates at application startup once per week</source>
@@ -305,10 +305,6 @@
         <translation>系統開機時自動啟動 KeePassXC</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>對未牽涉資料的變更（例如擴展群組），同樣將資料庫標記為已更改</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>安全儲存資料庫檔案（若和 Dropbox 等服務不相容，可停用此項）</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>自動輸入的啟動延遲：</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation>鎖定資料庫時自動儲存</translation>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation>鎖定資料庫時，自動儲存與資料無關的變更</translation>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation>系統列圖示類型</translation>
     </message>
 </context>
 <context>
@@ -1106,6 +1114,14 @@ chrome-laptop。</translation>
         <source>Column %1</source>
         <translation>欄位 %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>圖示</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1203,20 +1219,6 @@ Backup database located at %2</source>
         <translation>更新</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>舊版金鑰檔案格式</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>您使用的金鑰檔案格式為舊版本，將來有可能
-不再被支援。
-
-請考慮產生一組新的金鑰檔案。</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>不再顯示此警告</translation>
     </message>
@@ -1275,14 +1277,6 @@ Please consider generating a new key file.</source>
     <message>
         <source>TouchID for Quick Unlock</source>
         <translation>TouchID 快速解鎖</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>清除</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>清除金鑰檔案</translation>
     </message>
     <message>
         <source>Unlock failed and no password given</source>
@@ -1353,6 +1347,14 @@ If you do not have a key file, please leave the field empty.</source>
     <message>
         <source>Select hardware key…</source>
         <translation>選擇硬體金鑰…</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation>舊的金鑰檔案格式</translation>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation>您使用的金鑰檔案格式版本過舊，KeePassXC 可能&lt;br&gt;在未來停止支援。&lt;br&gt;&lt;br&gt;請考慮透過以下方式產生一組新的金鑰檔案：&lt;br&gt;&lt;strong&gt;資料庫 / 資料庫安全 / 更改金鑰檔案。&lt;/strong&gt;&lt;br&gt;</translation>
     </message>
 </context>
 <context>
@@ -2287,6 +2289,16 @@ Disable safe saves and try again?</source>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[受保護內容] 按「揭示」以檢視或編輯</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation>無效的項目</translation>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation>一項外部合併操作使此項目無效。
+不幸的是，所有更改已經損失。</translation>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2606,6 +2618,10 @@ Disable safe saves and try again?</source>
         <source>Expires:</source>
         <translation>過期：</translation>
     </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation>編輯項目</translation>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetSSHAgent</name>
@@ -2905,6 +2921,10 @@ Supported extensions are: %1.</source>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>設定預設自動輸入序列</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation>編輯群組</translation>
     </message>
 </context>
 <context>
@@ -3404,11 +3424,6 @@ Are you sure to add this file?</source>
         <translation>[受保護內容]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;：%2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>啟用</translation>
     </message>
@@ -3428,6 +3443,15 @@ Are you sure to add this file?</source>
         <source>Advanced</source>
         <translation>進階</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation>預設序列</translation>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</translation>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3438,18 +3462,6 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>自定義檢視</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>隱藏使用者名稱</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>隱藏密碼</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>符合視窗</translation>
@@ -3482,14 +3494,14 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>於 %1 註冊 DBus 服務失敗。&lt;br/&gt;</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%n 個項目被 %1 使用</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>於 %1 註冊 DBus 服務失敗。&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -4315,10 +4327,6 @@ If this reoccurs, then your database file may be corrupt.</source>
         <translation>&lt;p&gt;您可以加入一份包含隨機字元的金鑰檔案以提升安全性。&lt;/p&gt;&lt;p&gt;您必須將其保密，切莫丟失，否則您將會被鎖在外頭！&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>舊版金鑰檔案格式</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>載入金鑰檔案 &apos;%1&apos; 時出錯
@@ -4387,14 +4395,12 @@ Are you sure you want to continue with this file?</source>
 您確定要以此檔案繼續？</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>您使用的金鑰檔案格式為舊版本，將來有可能
-不再被支援。
-
-請到資料庫的安全設定產生一個新金鑰檔案。</translation>
+        <source>Old key file format</source>
+        <translation>舊的金鑰檔案格式</translation>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation>您選擇的金鑰檔案格式版本過舊，KeePassXC 可能&lt;br&gt;在未來停止支援。&lt;br&gt;&lt;br&gt;請考慮產生一組新的金鑰檔案。</translation>
     </message>
 </context>
 <context>
@@ -4838,6 +4844,38 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>必須重啟應用程式來套用此設定。您是否要現在重新啟動？</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation>執行自動輸入序列</translation>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation>{USERNAME}</translation>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation>{USERNAME}{ENTER}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation>{PASSWORD}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation>{PASSWORD}{ENTER}</translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation>視窗置頂顯示</translation>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>隱藏使用者名稱</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>隱藏密碼</translation>
     </message>
 </context>
 <context>
@@ -5324,10 +5362,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>極好</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>延伸 ASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>切換至進階模式</translation>
     </message>
@@ -5336,56 +5370,20 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>進階</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Z</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-z</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>括號</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>標點</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>引號</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!?=</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>語標符號</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5500,12 +5498,12 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>清除</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>重新生成密碼 (%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>特殊字元</translation>
     </message>
 </context>
 <context>
@@ -5587,7 +5585,7 @@ Expect some bugs and minor issues, this version is not meant for production use.
     </message>
     <message>
         <source>Empty</source>
-        <translation>空白</translation>
+        <translation>清空</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -5744,15 +5742,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>對密碼執行高級分析。</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>警告：你正在使用未來將不再支援的舊式金鑰檔案格式。
-
-請考慮產生新的金鑰。</translation>
     </message>
     <message>
         <source>
@@ -6142,10 +6131,6 @@ Available commands:
         <translation>%1: (列, 行) %2,%3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – 推薦)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6234,10 +6219,6 @@ Available commands:
     <message>
         <source>read password of the database from stdin</source>
         <translation>從 stdin 讀取資料庫密碼</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>父層視窗控制</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6726,10 +6707,6 @@ Kernel: %3 %4</source>
         <translation>AES (%1 個回合)</translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2 (%1 個回合, %2 KB)</translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation>AES 256-bit</translation>
     </message>
@@ -6754,6 +6731,52 @@ Kernel: %3 %4</source>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1 秒</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation>本地的自定義設定檔的路徑</translation>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation>警告：您使用的金鑰檔案格式版本過舊，KeePassXC 可能
+在未來停止支援。
+
+請考慮產生一組新的金鑰檔案。</translation>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation>Argon2%1 (%2 個回合, %3 KB)</translation>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation>Argon2d (KDBX 4 – 推薦)</translation>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation>Argon2id (KDBX 4)</translation>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>圖示</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation>不支援的金鑰檔案版本: %1</translation>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation>核對和不匹配！金鑰檔案可能已損壞。</translation>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation>出現未預期的金鑰檔案資料！金鑰檔案可能已損壞。</translation>
     </message>
 </context>
 <context>
@@ -7177,10 +7200,6 @@ Kernel: %3 %4</source>
     <message>
         <source>Search</source>
         <translation>搜尋</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>清除</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

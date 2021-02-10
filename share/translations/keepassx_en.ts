@@ -141,6 +141,10 @@
         <source>You must restart the application to set the new language. Would you like to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Monochrome</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -1114,6 +1118,14 @@ chrome-laptop.</source>
         <source>Column %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation type="unfinished">TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation type="unfinished">Icon</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1219,20 +1231,6 @@ Backup database located at %2</source>
         <translation>Refresh</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Legacy key file format</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>Don&apos;t show this warning again</translation>
     </message>
@@ -1290,14 +1288,6 @@ Please consider generating a new key file.</translation>
     </message>
     <message>
         <source>TouchID for Quick Unlock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished">Clear</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1363,6 +1353,14 @@ If you do not have a key file, please leave the field empty.</source>
     </message>
     <message>
         <source>Select hardware key…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2332,6 +2330,15 @@ Disable safe saves and try again?</translation>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2651,6 +2658,10 @@ Disable safe saves and try again?</translation>
         <source>Expires:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetSSHAgent</name>
@@ -2948,6 +2959,10 @@ Supported extensions are: %1.</source>
     </message>
     <message>
         <source>Set default Auto-Type sequence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3465,11 +3480,6 @@ Are you sure to add this file?</source>
         <translation>[PROTECTED]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Enabled</translation>
     </message>
@@ -3489,6 +3499,15 @@ Are you sure to add this file?</source>
         <source>Advanced</source>
         <translation type="unfinished">Advanced</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3499,18 +3518,6 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>Customize View</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>Hide Usernames</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>Hide Passwords</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>Fit to window</translation>
@@ -3535,22 +3542,7 @@ Are you sure to add this file?</source>
     </message>
 </context>
 <context>
-    <name>FdoSecrets::Item</name>
-    <message>
-        <source>Entry &quot;%1&quot; from database &quot;%2&quot; was used by %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FdoSecrets::Service</name>
-    <message numerus="yes">
-        <source>%n Entry(s) was used by %1</source>
-        <comment>%1 is the name of an application</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
     <message>
         <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
         <translation type="unfinished"></translation>
@@ -4375,10 +4367,6 @@ If this reoccurs, then your database file may be corrupt.</source>
         <translation>&lt;p&gt;You can add a key file containing random bytes for additional security.&lt;/p&gt;&lt;p&gt;You must keep it secret and never lose it or you will be locked out!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Legacy key file format</translation>
-    </message>
-    <message>
         <source>Error loading the key file &apos;%1&apos;
 Message: %2</source>
         <translation>Error loading the key file &apos;%1&apos;
@@ -4446,10 +4434,11 @@ Are you sure you want to continue with this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
+        <source>Old key file format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4914,6 +4903,18 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>{PASSWORD}{ENTER}</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation type="unfinished">Hide Usernames</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation type="unfinished">Hide Passwords</translation>
     </message>
 </context>
 <context>
@@ -5535,10 +5536,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation type="unfinished">Clear</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5783,16 +5780,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>Perform advanced analysis on the password.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</translation>
     </message>
     <message>
         <source>
@@ -6185,10 +6172,6 @@ Available commands:
         <translation>%1: (row, col) %2,%3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – recommended)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6277,10 +6260,6 @@ Available commands:
     <message>
         <source>read password of the database from stdin</source>
         <translation>read password of the database from stdin</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>Parent window handle</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6769,10 +6748,6 @@ Kernel: %3 %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6803,6 +6778,49 @@ Kernel: %3 %4</source>
             <numerusform>%1 s</numerusform>
             <numerusform>%1 s</numerusform>
         </translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation type="unfinished">TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation type="unfinished">Icon</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7226,10 +7244,6 @@ Kernel: %3 %4</source>
     <message>
         <source>Search</source>
         <translation>Search</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Clear</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

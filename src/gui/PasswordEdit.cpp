@@ -58,7 +58,7 @@ PasswordEdit::PasswordEdit(QWidget* parent)
 #endif
 
     m_toggleVisibleAction = new QAction(
-        resources()->icon("password-show-off"),
+        resources()->onOffIcon("password-show", false),
         tr("Toggle Password (%1)").arg(QKeySequence(modifier + Qt::Key_H).toString(QKeySequence::NativeText)),
         nullptr);
     m_toggleVisibleAction->setCheckable(true);
@@ -113,7 +113,7 @@ void PasswordEdit::enablePasswordGenerator()
 void PasswordEdit::setShowPassword(bool show)
 {
     setEchoMode(show ? QLineEdit::Normal : QLineEdit::Password);
-    m_toggleVisibleAction->setIcon(resources()->icon(show ? "password-show-on" : "password-show-off"));
+    m_toggleVisibleAction->setIcon(resources()->onOffIcon("password-show", show));
     m_toggleVisibleAction->setChecked(show);
 
     if (m_repeatPasswordEdit) {
@@ -180,7 +180,9 @@ void PasswordEdit::autocompletePassword(const QString& password)
 
 bool PasswordEdit::event(QEvent* event)
 {
-    if (isVisible()) {
+    if (isVisible()
+        && (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease
+            || event->type() == QEvent::FocusIn)) {
         checkCapslockState();
     }
     return QLineEdit::event(event);
@@ -204,7 +206,9 @@ void PasswordEdit::checkCapslockState()
 
         if (newCapslockState) {
             QTimer::singleShot(
-                150, [this]() { QToolTip::showText(mapToGlobal(rect().bottomLeft()), m_capslockAction->text()); });
+                150, [this] { QToolTip::showText(mapToGlobal(rect().bottomLeft()), m_capslockAction->text()); });
+        } else if (QToolTip::isVisible()) {
+            QToolTip::hideText();
         }
     }
 }

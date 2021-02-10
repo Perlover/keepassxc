@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>Kleurrijk</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation>Je moet de toepassing opnieuw starten om de nieuwe taal in te stellen. Wil je dat nu doen?</translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>Automatisch opslaan na iedere wijziging</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>Automatisch opslaan bij afsluiten</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -305,10 +305,6 @@
         <translation>KeePassXC automatisch opstarten met het systeem</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>Database markeren als gewijzigd voor niet-inhoudelijke aanpassingen (bijv. uitbreiding van groepen)</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>Databasebestanden veilig opslaan (uitschakelen bij problemen met Dropbox, enz.)</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>Auto-type startvertraging:</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation>Automatisch opslaan bij het vergrendelen van de database</translation>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation>Automatisch niet-gegevens wijzigingen opslaan bij het vergrendelen van de database</translation>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation>Systeemvak-pictogram</translation>
     </message>
 </context>
 <context>
@@ -1106,6 +1114,14 @@ chrome-laptop</translation>
         <source>Column %1</source>
         <translation>Kolom %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Pictogram</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1203,19 +1219,6 @@ Back-up databestand op %2</translation>
         <translation>Vernieuwen</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Verouderd sleutelbestandsformaat</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>Je gebruikt een verouderd sleutelbestandsformaat dat in de toekomst niet ondersteund zal worden.
-
-Het is raadzaam om een nieuw sleutelbestand te genereren.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>Deze waarschuwing niet meer geven</translation>
     </message>
@@ -1276,14 +1279,6 @@ Het is raadzaam om een nieuw sleutelbestand te genereren.</translation>
         <translation>Touch ID voor snelle ontgrendeling</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Wissen</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>Wis sleutelbestand</translation>
-    </message>
-    <message>
         <source>Unlock failed and no password given</source>
         <translation>Ontgrendeling mislukt en geen wachtwoord ingevoerd</translation>
     </message>
@@ -1303,7 +1298,7 @@ Om deze fout te voorkomen ga je naar &quot;Database instellingen.../Beveiliging&
     </message>
     <message>
         <source>Enter Additional Credentials (if any):</source>
-        <translation>Voer eventueel additionele inloggegevens in:</translation>
+        <translation>Voer eventuele aanvullende inloggegevens in:</translation>
     </message>
     <message>
         <source>&lt;p&gt;You can use a hardware security key such as a &lt;strong&gt;YubiKey&lt;/strong&gt; or &lt;strong&gt;OnlyKey&lt;/strong&gt; with slots configured for HMAC-SHA1.&lt;/p&gt;
@@ -1352,6 +1347,14 @@ Als je geen sleutelbestand hebt laat je het veld leeg.</translation>
     <message>
         <source>Select hardware key…</source>
         <translation>Selecteer hardwaresleutel...</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1528,7 +1531,7 @@ Dit is alleen nodig als je database een kopie is van een andere en de browserext
     <name>DatabaseSettingsWidgetDatabaseKey</name>
     <message>
         <source>Add additional protection...</source>
-        <translation>Extra beveiliging toevoegen...</translation>
+        <translation>Aanvullende beveiliging toevoegen...</translation>
     </message>
     <message>
         <source>No password set</source>
@@ -1782,7 +1785,7 @@ Als je dit aantal aanhoudt is het mogelijk heel gemakkelijk om de database te kr
     </message>
     <message>
         <source>Additional Database Settings</source>
-        <translation>Extra database-instellingen</translation>
+        <translation>Aanvullende database-instellingen</translation>
     </message>
     <message>
         <source>Database name field</source>
@@ -2285,12 +2288,21 @@ Veilig opslaan uitschakelen en opnieuw proberen?</translation>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[BESCHERMD] Druk op Onthullen om te bekijken of te bewerken</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
     <message>
         <source>Additional attributes</source>
-        <translation>Extra kenmerken</translation>
+        <translation>Aanvullende kenmerken</translation>
     </message>
     <message>
         <source>Add</source>
@@ -2460,7 +2472,7 @@ Veilig opslaan uitschakelen en opnieuw proberen?</translation>
     </message>
     <message>
         <source>Additional URL&apos;s</source>
-        <translation>Extra URLs</translation>
+        <translation>Aanvullende URLs</translation>
     </message>
     <message>
         <source>Add</source>
@@ -2603,6 +2615,10 @@ Veilig opslaan uitschakelen en opnieuw proberen?</translation>
     <message>
         <source>Expires:</source>
         <translation>Verloopt:</translation>
+    </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2903,6 +2919,10 @@ Ondersteund zijn: %1.</translation>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>Standaard Auto-type tekenreeks instellen</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3402,11 +3422,6 @@ Weet je zeker dat je dit bestand wilt toevoegen?</translation>
         <translation>[BEVEILIGD]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Geactiveerd</translation>
     </message>
@@ -3426,6 +3441,15 @@ Weet je zeker dat je dit bestand wilt toevoegen?</translation>
         <source>Advanced</source>
         <translation>Geavanceerd</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3436,18 +3460,6 @@ Weet je zeker dat je dit bestand wilt toevoegen?</translation>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>Weergave aanpassen</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>Gebruikersnamen verbergen</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>Wachtwoorden verbergen</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>Aanpassen aan venstergrootte</translation>
@@ -3480,14 +3492,14 @@ Weet je zeker dat je dit bestand wilt toevoegen?</translation>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>Kan DBus-service niet registreren op %1.&lt;br/&gt;</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%n Item is gebruikt door %1</numerusform><numerusform>%n Items zijn gebruikt door %1</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>Kan DBus-service niet registreren op %1.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -4313,10 +4325,6 @@ Als dit vaker gebeurt, is het databasebestand mogelijk beschadigd.</translation>
         <translation>&lt;p&gt;Je kunt een sleutelbestand met willekeurige bytes toevoegen voor extra veiligheid.&lt;/p&gt; &lt;p&gt;Je moet het sleutelbestand geheim houden en nooit verliezen anders wordt je buitengesloten!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Verouderd sleutelbestandsformaat</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>Er ging iets fout bij het laden van het sleutelbestand &apos;%1&apos;
@@ -4385,14 +4393,12 @@ Are you sure you want to continue with this file?</source>
 Weet je zeker dat je wilt doorgaan met dit bestand?</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>Je gebruikt een verouderde sleutelbestandsindeling die in de toekomst
-mogelijk niet wordt ondersteund.
-
-Genereer een nieuw sleutelbestand in de beveiligingsinstellingen van de database.</translation>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4837,6 +4843,38 @@ Houd rekening met fouten en kleine problemen. Deze versie is niet bedoeld voor r
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>Je moet de applicatie opnieuw opstarten om deze instelling toe te passen. 
 Wil je KeePassXC nu opnieuw opstarten?</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation>Auto-type tekenreeks uitvoeren</translation>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation>{GEBRUIKERSNAAM}</translation>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation>{GEBRUIKERSNAAM}{ENTER}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation>{WACHTWOORD}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation>{WACHTWOORD}{ENTER}</translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>Gebruikersnamen verbergen</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>Wachtwoorden verbergen</translation>
     </message>
 </context>
 <context>
@@ -5323,10 +5361,6 @@ Wil je KeePassXC nu opnieuw opstarten?</translation>
         <translation>Uitstekend</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>Uitgebreid ASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>Overschakelen naar de geavanceerde modus</translation>
     </message>
@@ -5335,56 +5369,20 @@ Wil je KeePassXC nu opnieuw opstarten?</translation>
         <translation>Geavanceerd</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Z</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-z</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>Haakjes</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>Leestekens</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>Aanhalingstekens</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!? =</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>Special tekens</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5499,12 +5497,12 @@ Wil je KeePassXC nu opnieuw opstarten?</translation>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Wissen</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>Òpnieuw genereren (%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>Speciale tekens</translation>
     </message>
 </context>
 <context>
@@ -5743,15 +5741,6 @@ Wil je KeePassXC nu opnieuw opstarten?</translation>
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>Geavanceerde analyse op het wachtwoord uitvoeren.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>WAARSCHUWING: Je gebruikt een verouderd sleutelbestandsformaat dat in de toekomst mogelijk niet ondersteund zal worden.
-
-Het is raadzaam om een nieuw sleutelbestand te genereren.</translation>
     </message>
     <message>
         <source>
@@ -6141,10 +6130,6 @@ Beschikbare opdrachten:
         <translation>%1: (rij, col) %2,%3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – aanbevolen)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6233,10 +6218,6 @@ Beschikbare opdrachten:
     <message>
         <source>read password of the database from stdin</source>
         <translation>lees wachtwoord van de database uit stdin</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>Parent window handle</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6725,10 +6706,6 @@ Kernelversie: %3 %4</translation>
         <translation>AES (%1 iteraties)</translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2 (%1 iteraties, %2 kB)</translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation>AES 256-bit</translation>
     </message>
@@ -6753,6 +6730,49 @@ Kernelversie: %3 %4</translation>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1 s</numerusform><numerusform>%1 s</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Pictogram</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7176,10 +7196,6 @@ Kernelversie: %3 %4</translation>
     <message>
         <source>Search</source>
         <translation>Zoeken</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Wissen</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

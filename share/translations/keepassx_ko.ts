@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>컬러풀</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>항목을 변경할 때 자동 저장</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>끝낼 때 자동 저장</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -305,10 +305,6 @@
         <translation>시스템 시작 시 KeePassXC 자동 시작</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>데이터가 변경되지 않았을 때 데이터베이스를 수정된 것으로 표시하지 않음(예: 그룹 확장)</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>데이터베이스 파일 안전 저장(Dropbox 등에서 문제 발생 시 비활성화)</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>자동 입력 시작 지연 시간:</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1106,6 +1114,14 @@ chrome-laptop.</translation>
         <source>Column %1</source>
         <translation>열 %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>아이콘</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1203,20 +1219,6 @@ Backup database located at %2</source>
         <translation>새로 고침</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>레거시 키 파일 형식</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>차후 버전에서 지원이 중단될 예정인 레거시 키 파일
-형식을 사용하고 있습니다.
-
-새 키 파일을 생성하는 것을 추천합니다.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>더 이상 이 경고 표시하지 않기</translation>
     </message>
@@ -1275,14 +1277,6 @@ Please consider generating a new key file.</source>
     <message>
         <source>TouchID for Quick Unlock</source>
         <translation>빠른 잠금 해제용 Touch ID</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>비우기</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>키 파일 비우기</translation>
     </message>
     <message>
         <source>Unlock failed and no password given</source>
@@ -1353,6 +1347,14 @@ If you do not have a key file, please leave the field empty.</source>
     <message>
         <source>Select hardware key…</source>
         <translation>하드웨어 키 선택...</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2286,6 +2288,15 @@ Disable safe saves and try again?</source>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[보호됨] 보거나 편집하려면 &quot;보이기&quot;를 누르십시오</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2605,6 +2616,10 @@ Disable safe saves and try again?</source>
         <source>Expires:</source>
         <translation>만료:</translation>
     </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetSSHAgent</name>
@@ -2904,6 +2919,10 @@ Supported extensions are: %1.</source>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>기본 자동 입력 순서 설정</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3404,11 +3423,6 @@ Are you sure to add this file?</source>
         <translation>[보호됨]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>사용함</translation>
     </message>
@@ -3428,6 +3442,15 @@ Are you sure to add this file?</source>
         <source>Advanced</source>
         <translation>고급</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3438,18 +3461,6 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>보기 사용자 정의</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>사용자 이름 숨기기</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>암호 숨기기</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>창에 맞춤</translation>
@@ -3482,14 +3493,14 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>%1에 DBus 서비스를 등록할 수 없습니다.&lt;br/&gt;</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%1에서 항목 %n개 사용함</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>%1에 DBus 서비스를 등록할 수 없습니다.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -4315,10 +4326,6 @@ If this reoccurs, then your database file may be corrupt.</source>
         <translation>&lt;p&gt;무작위 바이트가 들어 있는 키 파일을 추가하여 보안을 향상시킬 수 있습니다.&lt;/p&gt;&lt;p&gt;키 파일을 안전한 곳에 보관해야 하며 키 파일을 잃어버리면 데이터베이스에 접근할 수 없습니다!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>레거시 키 파일 형식</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>키 파일 &apos;%1&apos;을(를) 불러올 수 없음
@@ -4387,14 +4394,12 @@ Are you sure you want to continue with this file?</source>
 이 파일을 그래도 사용하시겠습니까?</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>차후 버전에서 지원이 중단될 예정인 레거시 키 파일
-형식을 사용하고 있습니다.
-
-데이터베이스 보안 설정에서 새 키 파일을 생성하는 것을 추천합니다.</translation>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4838,6 +4843,38 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>이 설정을 적용하려면 프로그램을 다시 시작해야 합니다. 지금 다시 시작하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>사용자 이름 숨기기</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>암호 숨기기</translation>
     </message>
 </context>
 <context>
@@ -5324,10 +5361,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>매우 좋음</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>확장 ASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>고급 모드로 전환</translation>
     </message>
@@ -5336,56 +5369,20 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>고급</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Z</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-z</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>괄호</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>구두점</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>따옴표</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!?=</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>로고그램</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5500,12 +5497,12 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>비우기</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>암호 다시 생성(%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>특수 문자</translation>
     </message>
 </context>
 <context>
@@ -5744,16 +5741,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>암호에 고급 분석을 시행합니다.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>경고: 차후 버전에서 지원이 중단될 예정인 레거시 키 파일
-형식을 사용하고 있습니다.
-
-새 키 파일을 생성하는 것을 추천합니다.</translation>
     </message>
     <message>
         <source>
@@ -6143,10 +6130,6 @@ Available commands:
         <translation>%1: (줄, 칸) %2, %3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2(KDBX 4 – 추천)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF(KDBX 4)</translation>
     </message>
@@ -6235,10 +6218,6 @@ Available commands:
     <message>
         <source>read password of the database from stdin</source>
         <translation>표준 입력에서 데이터베이스 암호 읽기</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>부모 창 핸들</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6727,10 +6706,6 @@ CPU 아키텍처: %2
         <translation>AES(%1라운드)</translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2(%1라운드, %2 KB)</translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation>AES 256비트</translation>
     </message>
@@ -6755,6 +6730,49 @@ CPU 아키텍처: %2
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1초</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>아이콘</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7178,10 +7196,6 @@ CPU 아키텍처: %2
     <message>
         <source>Search</source>
         <translation>찾기</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>비우기</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

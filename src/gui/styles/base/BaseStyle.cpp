@@ -52,7 +52,13 @@
 #include <QtMath>
 #include <qdrawutil.h>
 
+#ifdef Q_OS_MACOS
+#include <QOperatingSystemVersion>
+#endif
+
 #include <cmath>
+
+#include "core/Resources.h"
 
 QT_BEGIN_NAMESPACE
 Q_GUI_EXPORT int qt_defaultDpiX();
@@ -282,6 +288,23 @@ namespace Phantom
                            ? highlightedOutlineOf(pal)
                            : Grad(pal.color(QPalette::WindowText), pal.color(QPalette::Window)).sample(0.5);
             }
+
+#ifdef Q_OS_MACOS
+            QColor tabBarBase(const QPalette& pal)
+            {
+                if (QOperatingSystemVersion::current() >= QOperatingSystemVersion::MacOSBigSur) {
+                    return hack_isLightPalette(pal) ? QRgb(0xD4D4D4) : QRgb(0x2A2A2A);
+                }
+                return hack_isLightPalette(pal) ? QRgb(0xDD1D1D1) : QRgb(0x252525);
+            }
+            QColor tabBarBaseInactive(const QPalette& pal)
+            {
+                if (QOperatingSystemVersion::current() >= QOperatingSystemVersion::MacOSBigSur) {
+                    return hack_isLightPalette(pal) ? QRgb(0xF5F5F5) : QRgb(0x2D2D2D);
+                }
+                return hack_isLightPalette(pal) ? QRgb(0xF4F4F4) : QRgb(0x282828);
+            }
+#endif
         } // namespace DeriveColors
 
         namespace SwatchColors
@@ -328,6 +351,9 @@ namespace Phantom
                 S_itemView_headerOnLine,
                 S_scrollbarGutter_disabled,
 
+                S_tabBarBase,
+                S_tabBarBase_inactive,
+
                 // Aliases
                 S_progressBar = S_highlight,
                 S_progressBar_specular = S_highlight_specular,
@@ -340,7 +366,7 @@ namespace Phantom
 
         enum
         {
-            Num_SwatchColors = SwatchColors::S_scrollbarGutter_disabled + 1,
+            Num_SwatchColors = SwatchColors::S_tabBarBase_inactive + 1,
             Num_ShadowSteps = 3,
         };
 
@@ -442,6 +468,14 @@ namespace Phantom
             colors[S_itemView_multiSelection_currentBorder] = Dc::itemViewMultiSelectionCurrentBorderOf(pal);
             colors[S_itemView_headerOnLine] = Dc::itemViewHeaderOnLineColorOf(pal);
             colors[S_scrollbarGutter_disabled] = colors[S_window];
+
+#ifdef Q_OS_MACOS
+            colors[S_tabBarBase] = Dc::tabBarBase(pal);
+            colors[S_tabBarBase_inactive] = Dc::tabBarBaseInactive(pal);
+#else
+            colors[S_tabBarBase] = pal.color(QPalette::Active, QPalette::Window);
+            colors[S_tabBarBase_inactive] = pal.color(QPalette::Inactive, QPalette::Window);
+#endif
 
             brushes[S_none] = Qt::NoBrush;
             for (int i = S_none + 1; i < Num_SwatchColors; ++i) {
@@ -1551,6 +1585,12 @@ void BaseStyle::drawPrimitive(PrimitiveElement elem,
         auto tbb = qstyleoption_cast<const QStyleOptionTabBarBase*>(option);
         if (!tbb)
             break;
+
+#ifdef Q_OS_MACOS
+        painter->fillRect(widget->rect(),
+                          swatch.color(option->state & QStyle::State_Active ? S_tabBarBase : S_tabBarBase_inactive));
+#endif
+
         Qt::Edge edge = Qt::TopEdge;
         switch (tbb->shape) {
         case QTabBar::RoundedNorth:
@@ -2253,6 +2293,21 @@ void BaseStyle::drawControl(ControlElement element,
         auto toolBar = qstyleoption_cast<const QStyleOptionToolBar*>(option);
         if (!toolBar)
             break;
+
+#ifdef Q_OS_MACOS
+        if (auto* mainWindow = qobject_cast<QMainWindow*>(widget->window())) {
+            // Fill toolbar background with transparent pixels to reveal the
+            // gradient background drawn by the Cocoa platform plugin.
+            // Inspired by qmacstyle_mac.mm.
+            if (m_drawNativeMacOsToolBar && toolBar && toolBar->toolBarArea == Qt::TopToolBarArea
+                && mainWindow->unifiedTitleAndToolBarOnMac()) {
+                painter->setCompositionMode(QPainter::CompositionMode_Source);
+                painter->fillRect(option->rect, Qt::transparent);
+                break;
+            }
+        }
+#endif
+
         painter->fillRect(option->rect, option->palette.window().color());
         bool isFloating = false;
         if (auto tb = qobject_cast<const QToolBar*>(widget)) {
@@ -2650,8 +2705,10 @@ void BaseStyle::drawControl(ControlElement element,
                 if (isChecked) {
                     painter->setRenderHint(QPainter::Antialiasing);
                     painter->setPen(Qt::NoPen);
+                    // clang-format off
                     QPalette::ColorRole textRole =
                         !isEnabled ? QPalette::Text : isSelected ? QPalette::HighlightedText : QPalette::ButtonText;
+                    // clang-format on
                     painter->setBrush(option->palette.brush(option->palette.currentColorGroup(), textRole));
                     qreal rx, ry, rw, rh;
                     QRectF(checkRect).getRect(&rx, &ry, &rw, &rh);
@@ -3034,6 +3091,21 @@ void BaseStyle::drawControl(ControlElement element,
 QPalette BaseStyle::standardPalette() const
 {
     return QCommonStyle::standardPalette();
+}
+
+QIcon BaseStyle::standardIcon(StandardPixmap sp, const QStyleOption* opt, const QWidget* widget) const
+{
+    switch (sp) {
+    case SP_ToolBarHorizontalExtensionButton:
+        return resources()->icon("chevron-double-down");
+    case SP_ToolBarVerticalExtensionButton:
+        return resources()->icon("chevron-double-right");
+    case SP_LineEditClearButton:
+        return resources()->icon(
+            QString("edit-clear-locationbar-").append((opt->direction == Qt::LeftToRight) ? "rtl" : "ltr"));
+    default:
+        return QCommonStyle::standardIcon(sp, opt, widget);
+    }
 }
 
 void BaseStyle::drawComplexControl(ComplexControl control,
@@ -4509,27 +4581,6 @@ QStyle::SubControl BaseStyle::hitTestComplexControl(ComplexControl cc,
     return QCommonStyle::hitTestComplexControl(cc, opt, pt, w);
 }
 
-QPixmap BaseStyle::generatedIconPixmap(QIcon::Mode iconMode, const QPixmap& pixmap, const QStyleOption* opt) const
-{
-    // Default icon highlight is way too subtle
-    if (iconMode == QIcon::Selected) {
-        QImage img = pixmap.toImage().convertToFormat(QImage::Format_ARGB32_Premultiplied);
-        QPainter painter(&img);
-
-        painter.setCompositionMode(QPainter::CompositionMode_SourceAtop);
-
-        QColor color =
-            Phantom::DeriveColors::adjustLightness(opt->palette.color(QPalette::Normal, QPalette::Highlight), .25);
-        color.setAlphaF(0.25);
-        painter.fillRect(0, 0, img.width(), img.height(), color);
-
-        painter.end();
-
-        return QPixmap::fromImage(img);
-    }
-    return QCommonStyle::generatedIconPixmap(iconMode, pixmap, opt);
-}
-
 int BaseStyle::styleHint(StyleHint hint,
                          const QStyleOption* option,
                          const QWidget* widget,
@@ -4715,7 +4766,11 @@ QRect BaseStyle::subElementRect(SubElement sr, const QStyleOption* opt, const QW
     }
     case SE_LineEditContents: {
         QRect r = QCommonStyle::subElementRect(sr, opt, w);
-        int pad = Phantom::dpiScaled(Phantom::LineEdit_ContentsHPad);
+        int pad = Phantom::LineEdit_ContentsHPad;
+        if (w && qobject_cast<const QComboBox*>(w->parentWidget())) {
+            pad += 3;
+        }
+        pad = Phantom::dpiScaled(pad);
         return r.adjusted(pad, 0, -pad, 0);
     }
     default:

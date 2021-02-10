@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>Farebné</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation>Musíte reštartovať aplikáciu, aby sa tieto zmeny prejavili. Chcete ju reštartovať teraz?</translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>Automaticky uložiť po každej zmene</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>Automaticky uložiť pri ukončení</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -305,10 +305,6 @@
         <translation>Automaticky spustiť KeePassXC pri štarte systému</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>Označovať databázu za zmenenú pri nedátových zmenách (napr. rozbalenie skupiny)</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>Bezpečne uložiť súbory databáz  (vypnite pri problémoch s Dropbox, apod)</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>Oneskorenia spustenia Automatického vypĺňania:</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation>Pri zamknutí databázy automaticky uložiť</translation>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation>Pri zamknutí databázy automaticky uložiť nedátové zmeny</translation>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation>Typ ikona oznamovacej oblasti</translation>
     </message>
 </context>
 <context>
@@ -948,7 +956,7 @@ chrome-laptop.</translation>
     </message>
     <message>
         <source>Select native messaging host folder location</source>
-        <translation type="unfinished"/>
+        <translation>Vyberte umiestnenie zložky hostiteľa správe medzi prehliadačom a KeePassXC</translation>
     </message>
 </context>
 <context>
@@ -1106,6 +1114,14 @@ chrome-laptop.</translation>
         <source>Column %1</source>
         <translation>Stĺpec %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Ikona</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1203,20 +1219,6 @@ Zálohovať databázu nachádzajúcu sa na %2</translation>
         <translation>Obnoviť</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Starý formát kľúča</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>Používate starý formát súboru kľúča, ktorý už nemusí byť
-v budúcnosti podporovaný .
-
-Prosím, zvážte vygenerovanie nového súboru kľúča.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>Nezobrazovať znova toto upozornenie</translation>
     </message>
@@ -1275,14 +1277,6 @@ Prosím, zvážte vygenerovanie nového súboru kľúča.</translation>
     <message>
         <source>TouchID for Quick Unlock</source>
         <translation>TouchID pre rýchle odomknutie</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Vymazať</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>Vymazať súbor kľúča</translation>
     </message>
     <message>
         <source>Unlock failed and no password given</source>
@@ -1353,6 +1347,14 @@ Ak nemáte súbor kľúča, prosím nechajte toto pole prázdne.</translation>
     <message>
         <source>Select hardware key…</source>
         <translation>Zvoľte hardvérový kľúč…</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2287,6 +2289,15 @@ Vypnúť bezpečné ukladanie a skúsiť znova?</translation>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[CHRÁNENÉ] Stlačte odkryť na zobrazenie alebo úpravu</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2606,6 +2617,10 @@ Vypnúť bezpečné ukladanie a skúsiť znova?</translation>
         <source>Expires:</source>
         <translation>Platí do:</translation>
     </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetSSHAgent</name>
@@ -2905,6 +2920,10 @@ Podporované rozšírenia sú: %1.</translation>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>Nastaviť predvolenú postupnosť Automatického vypĺňania</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3408,11 +3427,6 @@ Naozaj chcete pridať tento súbor?</translation>
         <translation>[CHRÁNENÉ]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Zapnuté</translation>
     </message>
@@ -3432,6 +3446,15 @@ Naozaj chcete pridať tento súbor?</translation>
         <source>Advanced</source>
         <translation>Pokročilé</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3442,18 +3465,6 @@ Naozaj chcete pridať tento súbor?</translation>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>Prispôsobiť zobrazenie</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>Skryť použ. mená</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>Skryť heslá</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>Prispôsobiť oknu</translation>
@@ -3486,14 +3497,14 @@ Naozaj chcete pridať tento súbor?</translation>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>Zlyhala registrácia služby DBus na %1.</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%n položka použitá v %1</numerusform><numerusform>%n položky použité v %1</numerusform><numerusform>%n položiek použitých v %1</numerusform><numerusform>%n položky použité v %1</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>Zlyhala registrácia služby DBus na %1.</translation>
     </message>
 </context>
 <context>
@@ -4320,10 +4331,6 @@ Ak sa to opakuje, potom môže byť súbor databázy poškodený.</translation>
         <translation>&lt;p&gt;Môžete pridať súbor kľúča s náhodnými bajtmi, na dodatočnú bezpečnosť .&lt;/p&gt;&lt;p&gt;Musíte ho držať v tajnosti a nikdy nestratiť, inak prídete o prístup!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Starý formát kľúča</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>Chyba načítania súboru kľúča „%1”
@@ -4392,14 +4399,12 @@ Are you sure you want to continue with this file?</source>
 Naozaj chcete pokračovať s týmto súborom?</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>Používate starý formát súboru kľúča, ktorý už nemusí byť
-v budúcnosti podporovaný .
-
-Vygenerujte nový súbor kľúča v nastavení bezpečnosti databázy.</translation>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4843,6 +4848,38 @@ Očakávajte chyby a menšie problémy, táto verzia nie je určená na produkč
     <message>
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>Musíte reštartovať aplikáciu, aby sa tieto zmeny prejavili. Chcete ju reštartovať teraz?</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation>Vykonať Automatické vypĺňanie</translation>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation>{POUŽÍVATEĽ}</translation>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation>{POUŽÍVATEĽ}{ENTER}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation>{HESLO}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation>{HESLO}{ENTER}</translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>Skryť použ. mená</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>Skryť heslá</translation>
     </message>
 </context>
 <context>
@@ -5329,10 +5366,6 @@ Očakávajte chyby a menšie problémy, táto verzia nie je určená na produkč
         <translation>Výbroné</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>Rozšírené ASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>Prepnúť na pokročilý režim</translation>
     </message>
@@ -5341,56 +5374,20 @@ Očakávajte chyby a menšie problémy, táto verzia nie je určená na produkč
         <translation>Pokročilé</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Ž</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-ž</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>Zátvorky</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>Interpunkcia</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>Úvodzovky</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!?=</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>Zástupné znaky</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5505,12 +5502,12 @@ Očakávajte chyby a menšie problémy, táto verzia nie je určená na produkč
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Vymazať</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>Obnoviť heslo (%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>Špeciálne znaky</translation>
     </message>
 </context>
 <context>
@@ -5749,16 +5746,6 @@ Očakávajte chyby a menšie problémy, táto verzia nie je určená na produkč
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>Vykonať pokročilú analýzu hesla.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>Používate starý formát súboru kľúča, ktorý už nemusí byť
-v budúcnosti podporovaný .
-
-Prosím, zvážte vygenerovanie nového súboru kľúča.</translation>
     </message>
     <message>
         <source>
@@ -6148,10 +6135,6 @@ Dostupné príkazy:
         <translation>%1: (riadok, stĺpec) %2, %3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – odporúčané)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6240,10 +6223,6 @@ Dostupné príkazy:
     <message>
         <source>read password of the database from stdin</source>
         <translation>čítať heslo databázy zo stdin</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>ID rodičovského okna</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6579,7 +6558,7 @@ Jadro: %3 %4</translation>
     </message>
     <message>
         <source>Could not save the native messaging script file for %1.</source>
-        <translation type="unfinished"/>
+        <translation>Nemožno uložiť súbor skriptu správ medzi prehliadačom a KeePassXC (native messaging) pre %1.</translation>
     </message>
     <message>
         <source>Copy the given attribute to the clipboard. Defaults to &quot;password&quot; if not specified.</source>
@@ -6731,10 +6710,6 @@ Jadro: %3 %4</translation>
         <translation>AES (%1 opakovaní)</translation>
     </message>
     <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2 (%1 opakovaní, %2 kB)</translation>
-    </message>
-    <message>
         <source>AES 256-bit</source>
         <translation>AES 256b</translation>
     </message>
@@ -6759,6 +6734,49 @@ Jadro: %3 %4</translation>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1 s</numerusform><numerusform>%1 s</numerusform><numerusform>%1 s</numerusform><numerusform>%1 s</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Ikona</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -7182,10 +7200,6 @@ Jadro: %3 %4</translation>
     <message>
         <source>Search</source>
         <translation>Hľadať</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Vymazať</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

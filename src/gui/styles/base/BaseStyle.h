@@ -42,6 +42,8 @@ public:
     };
 
     QPalette standardPalette() const override;
+    QIcon
+    standardIcon(StandardPixmap sp, const QStyleOption* opt = nullptr, const QWidget* widget = nullptr) const override;
     void drawPrimitive(PrimitiveElement elem,
                        const QStyleOption* option,
                        QPainter* painter,
@@ -68,7 +70,6 @@ public:
                          const QStyleOptionComplex* opt,
                          SubControl sc,
                          const QWidget* widget) const override;
-    QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap& pixmap, const QStyleOption* opt) const override;
     int styleHint(StyleHint hint,
                   const QStyleOption* option = nullptr,
                   const QWidget* widget = nullptr,
@@ -94,6 +95,15 @@ protected:
     {
         return {};
     }
+
+#ifdef Q_OS_MACOS
+    /**
+     * Whether to draw a native macOS toolbar or fill it with a solid color instead.
+     * Can be set to false to avoid mixed themes if the OS theme isn't the same as
+     * the KeePassXC application theme.
+     */
+    bool m_drawNativeMacOsToolBar = true;
+#endif
 
     BaseStylePrivate* d;
 };

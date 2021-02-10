@@ -50,6 +50,85 @@
     </screenshots>
 
     <releases>
+        <release version="2.6.4" date="2021-01-31">
+            <description>
+                <ul>
+                    <li>Automatically adapt to light/dark system theme changes (Windows/macOS only) [#6034]</li>
+                    <li>Show window title as tooltip on system tray [#5948]</li>
+                    <li>Compress Snap release as LZO for faster initial startup [#5877]</li>
+                    <li>Password generator: Set maximum selectable password length to 999 [#5937]</li>
+                    <li>Fix crash on app close when using SSH agent [#5935]</li>
+                    <li>Fix KDF selection showing wrong item when using Argon2id [#5923]</li>
+                    <li>Automatically close About dialog on database lock if it is still open [#5947]</li>
+                    <li>Linux: Fix automatic launch at system startup with AppImages [#5901]</li>
+                    <li>Linux: Fix click-to-move on empty area activating when using menus [#5971]</li>
+                    <li>Linux: Try multiple times to show tray icon if tray is not ready yet [#5948]</li>
+                    <li>macOS: Fix KeePassXC blocking clean shutdown [#6002]</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.6.3" date="2021-01-12">
+            <description>
+                <ul>
+                    <li>Support Argon2id KDF [#5778]</li>
+                    <li>Support XMLv2 key files [#5798]</li>
+                    <li>Improve CSV Import/Export, include time fields and TOTP [#5346]</li>
+                    <li>Support empty area dragging of the application window [#5860]</li>
+                    <li>Display default Auto-Type sequence in preview pane [#5654]</li>
+                    <li>Remove strict length limit on generated passwords [#5748]</li>
+                    <li>Hide key file path by default when unlocking database [#5779]</li>
+                    <li>Document browser extension use with Edge in managed mode [#5692]</li>
+                    <li>Windows: Prevent clipboard history and cloud sync [#5853]</li>
+                    <li>macOS: Update the application icon to Big Sur styling [#5851]</li>
+                    <li>Re-select previously selected entry on database unlock [#5559]</li>
+                    <li>Properly save special character choice in password generator [#5610]</li>
+                    <li>Fix crash in browser integration with multiple similar entries [#5653]</li>
+                    <li>Remove offset on username field in classic theme [#5788]</li>
+                    <li>Ensure entry history is copied when drag/dropping entries and groups [#5817]</li>
+                    <li>Close modal dialogs when database is locked [#5820]</li>
+                    <li>Prevent crash when KeeShare modifies an entry that is currently being edited [#5827]</li>
+                    <li>Improve preview of entry attributes [#5834]</li>
+                    <li>Always activate/focus database open dialog preventing mistype [#5878]</li>
+                    <li>Reports: fix calculation of average password length [#5862]</li>
+                    <li>Linux: Delay startup on login to correct tray icon issues [#5724]</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2.6.2" date="2020-10-21">
+            <description>
+                <ul>
+                    <li>Add option to keep window always on top to view menu [#5542]</li>
+                    <li>Move show/hide usernames and passwords to view menu [#5542]</li>
+                    <li>Add command line options and environment variables for changing the config locations [#5452]</li>
+                    <li>Include TOTP settings in CSV import/export and add support for ISO datetimes [#5346]</li>
+                    <li>Mask sensitive information in command execution confirmation prompt [#5542]</li>
+                    <li>SSH Agent: Avoid shortcut conflict on macOS by changing "Add key" to Ctrl+H on all platforms [#5484]</li>
+                    <li>Prevent data loss with drag and drop between databases [#5536]</li>
+                    <li>Fix crash when toggling Capslock rapidly [#5545]</li>
+                    <li>Don't mark URL references as invalid URL [#5380]</li>
+                    <li>Reset entry preview after search [#5483]</li>
+                    <li>Set Qt::Dialog flag on database open dialog [#5356]</li>
+                    <li>Fix sorting of database report columns [#5426]</li>
+                    <li>Fix IfDevice matching logic [#5344]</li>
+                    <li>Fix layout issues and a stray scrollbar appearing on top of the entry edit screen [#5424]</li>
+                    <li>Fix tabbing into the notes field [#5424]</li>
+                    <li>Fix password generator ignoring settings on load [#5340]</li>
+                    <li>Restore natural entry sort order on application load [#5438]</li>
+                    <li>Fix paperclip and TOTP columns not saving state [#5327]</li>
+                    <li>Enforce fixed password font in entry preview [#5454]</li>
+                    <li>Add scrollbar when new database wizard exceeds screen size [#5560]</li>
+                    <li>Do not mark database as modified when viewing Auto-Type associations [#5542]</li>
+                    <li>CLI: Fix two heap-use-after-free crashes [#5368,#5470]</li>
+                    <li>Browser: Fix key exchange not working with multiple simultaneous users on Windows [#5485]</li>
+                    <li>Browser: Fix entry retrieval when "only best matching" is enabled [#5316]</li>
+                    <li>Browser: Ignore recycle bin on KeePassHTTP migration [#5481]</li>
+                    <li>KeeShare: Fix import crash [#5542]</li>
+                    <li>macOS: Fix toolbar theming and breadcrumb display issues [#5482]</li>
+                    <li>macOS: Fix file dialog randomly closing [#5479]</li>
+                    <li>macOS: Fix being unable to select OPVault files for import [#5341]</li>
+                </ul>
+            </description>
+        </release>
         <release version="2.6.1" date="2020-08-19">
             <description>
                 <ul>

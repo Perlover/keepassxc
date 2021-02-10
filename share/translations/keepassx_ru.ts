@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>Report bugs at: &lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/issues&quot; style=&quot;text-decoration: underline;&quot;&gt;https://github.com&lt;/a&gt;</source>
-        <translation>Сообщать об ошибках: &lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/issues&quot; style=&quot;text-decoration: underline;&quot;&gt;https://github.com&lt;/a&gt;</translation>
+        <translation>Сообщить об &lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/issues&quot; style=&quot;text-decoration: underline;&quot;&gt;ошибках&lt;/a&gt; по https://github.com</translation>
     </message>
     <message>
         <source>KeePassXC is distributed under the terms of the GNU General Public License (GPL) version 2 or (at your option) version 3.</source>
@@ -19,11 +19,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Авторы</translation>
+        <translation>Соавторы</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/graphs/contributors&quot;&gt;See Contributions on GitHub&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/graphs/contributors&quot;&gt;Посмотреть вклад на GitHub&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/keepassxreboot/keepassxc/graphs/contributors&quot;&gt;Посмотреть соавторов на GitHub&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Debug Info</source>
@@ -135,6 +135,10 @@
         <source>Colorful</source>
         <translation>Цветной</translation>
     </message>
+    <message>
+        <source>You must restart the application to set the new language. Would you like to restart now?</source>
+        <translation>Вы должны перезапустить приложение, чтобы установить новый язык. Хотите перезапустить сейчас?</translation>
+    </message>
 </context>
 <context>
     <name>ApplicationSettingsWidgetGeneral</name>
@@ -165,10 +169,6 @@
     <message>
         <source>Automatically save after every change</source>
         <translation>Автоматически сохранять после каждого изменения</translation>
-    </message>
-    <message>
-        <source>Automatically save on exit</source>
-        <translation>Автоматически сохранять при выходе</translation>
     </message>
     <message>
         <source>Automatically reload the database when modified externally</source>
@@ -305,10 +305,6 @@
         <translation>Автоматически запуск KeePassXC при запуске системы</translation>
     </message>
     <message>
-        <source>Mark database as modified for non-data changes (e.g., expanding groups)</source>
-        <translation>Помечать базу данных изменённой при действиях, не связанных с изменением данных (например, при раскрытии групп)</translation>
-    </message>
-    <message>
         <source>Safely save database files (disable if experiencing problems with Dropbox, etc.)</source>
         <translation>Безопасное сохранение файлов базы данных (возможна несовместимость с Dropbox и др.)</translation>
     </message>
@@ -343,6 +339,18 @@
     <message>
         <source>Auto-Type start delay:</source>
         <translation>Задержка начала автоввода:</translation>
+    </message>
+    <message>
+        <source>Automatically save when locking database</source>
+        <translation>Автоматическое сохранение при блокировке базы данных</translation>
+    </message>
+    <message>
+        <source>Automatically save non-data changes when locking database</source>
+        <translation>Автоматическое сохранение изменений, не связанных с данными, при блокировке базы данных.</translation>
+    </message>
+    <message>
+        <source>Tray icon type</source>
+        <translation>Тип значка в системном лотке</translation>
     </message>
 </context>
 <context>
@@ -1104,6 +1112,14 @@ chrome-laptop.</source>
         <source>Column %1</source>
         <translation>Столбец %1</translation>
     </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Значок</translation>
+    </message>
 </context>
 <context>
     <name>CsvParserModel</name>
@@ -1201,19 +1217,6 @@ Backup database located at %2</source>
         <translation>Обновить</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Устаревший формат файла-ключа</translation>
-    </message>
-    <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>Вы используете файл-ключ устаревшего формата, поддержка которого может быть прекращена в будущем.
-
-По возможности создайте новый файл-ключ.</translation>
-    </message>
-    <message>
         <source>Don&apos;t show this warning again</source>
         <translation>Не показывать это предупреждение</translation>
     </message>
@@ -1272,14 +1275,6 @@ Please consider generating a new key file.</source>
     <message>
         <source>TouchID for Quick Unlock</source>
         <translation>TouchID для Быстрой Разблокировки</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>Clear Key File</source>
-        <translation>Очистить строку выбора файла-ключа </translation>
     </message>
     <message>
         <source>Unlock failed and no password given</source>
@@ -1349,6 +1344,14 @@ If you do not have a key file, please leave the field empty.</source>
     <message>
         <source>Select hardware key…</source>
         <translation>Выберите аппаратный ключ...</translation>
+    </message>
+    <message>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You are using an old key file format which KeePassXC may&lt;br&gt;stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file by going to:&lt;br&gt;&lt;strong&gt;Database / Database Security / Change Key File.&lt;/strong&gt;&lt;br&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2283,6 +2286,15 @@ Disable safe saves and try again?</source>
         <source>[PROTECTED] Press Reveal to view or edit</source>
         <translation>[ЗАЩИЩЕНО] Нажмите для восстановления или изменения</translation>
     </message>
+    <message>
+        <source>Invalid Entry</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An external merge operation has invalidated this entry.
+Unfortunately, any changes made have been lost.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EditEntryWidgetAdvanced</name>
@@ -2360,7 +2372,7 @@ Disable safe saves and try again?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If checked, the entry will not appear in reports like Health Check and HIBP even if it doesn&apos;t match the quality requirements (e. g. password entropy or re-use). You can set the check mark if the password is beyond your control (e. g. if it needs to be a four-digit PIN) to prevent it from cluttering the reports.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При включении, запись не появится в отчетах (например, Проверки безопасности или HIBP), даже если она не соответствует требованиям к качеству (энтропия, переиспользование). Можно включить этот параметр, если вы не можете контролировать этот пароль (например, 4-значные пин-кодыж), чтобы не засорять отчет.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Exclude from database reports</source>
@@ -2474,7 +2486,7 @@ Disable safe saves and try again?</source>
     </message>
     <message>
         <source>Only send this setting to the browser for HTTP Auth dialogs. If enabled, normal login forms will not show this entry for selection.</source>
-        <translation type="unfinished"/>
+        <translation>Отправлять эту настройку только браузерным диалогам для HTTP Auth. Если включено, обычные формы авторизации не покажут запись среди вариантов выбора.</translation>
     </message>
     <message>
         <source>Use this entry only with HTTP Basic Auth</source>
@@ -2601,6 +2613,10 @@ Disable safe saves and try again?</source>
     <message>
         <source>Expires:</source>
         <translation>Истекает:</translation>
+    </message>
+    <message>
+        <source>Edit Entry</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2900,6 +2916,10 @@ Supported extensions are: %1.</source>
     <message>
         <source>Set default Auto-Type sequence</source>
         <translation>Задать последовательность автоввода по умолчанию</translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -3403,11 +3423,6 @@ Are you sure to add this file?</source>
         <translation>[ЗАЩИЩЕНО]</translation>
     </message>
     <message>
-        <source>&lt;b&gt;%1&lt;/b&gt;: %2</source>
-        <comment>attributes line</comment>
-        <translation>&lt;b&gt;%1&lt;/b&gt;: %2</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Включено</translation>
     </message>
@@ -3427,6 +3442,15 @@ Are you sure to add this file?</source>
         <source>Advanced</source>
         <translation>Расширенный режим</translation>
     </message>
+    <message>
+        <source>Default Sequence</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;tr&gt;&lt;td&gt;&lt;b&gt;%1&lt;/b&gt;:&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;/tr&gt;</source>
+        <comment>attributes line</comment>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>EntryURLModel</name>
@@ -3437,18 +3461,6 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>EntryView</name>
-    <message>
-        <source>Customize View</source>
-        <translation>Настройка вида</translation>
-    </message>
-    <message>
-        <source>Hide Usernames</source>
-        <translation>Скрыть логины</translation>
-    </message>
-    <message>
-        <source>Hide Passwords</source>
-        <translation>Скрыть пароли</translation>
-    </message>
     <message>
         <source>Fit to window</source>
         <translation>По размеру окна</translation>
@@ -3481,14 +3493,14 @@ Are you sure to add this file?</source>
 </context>
 <context>
     <name>FdoSecrets::Service</name>
+    <message>
+        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
+        <translation>Не удалось зарегистрировать службу DBus на %1.&lt;br/&gt;</translation>
+    </message>
     <message numerus="yes">
         <source>%n Entry(s) was used by %1</source>
         <comment>%1 is the name of an application</comment>
         <translation><numerusform>%n запись использована %1</numerusform><numerusform>%n записи использованы %1</numerusform><numerusform>%n записей использованы %1</numerusform><numerusform>%n записи использованы %1</numerusform></translation>
-    </message>
-    <message>
-        <source>Failed to register DBus service at %1.&lt;br/&gt;</source>
-        <translation>Не удалось зарегистрировать службу DBus на %1.&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -4314,10 +4326,6 @@ If this reoccurs, then your database file may be corrupt.</source>
         <translation>&lt;p&gt;Для большей безопасности вы можете добавить файл-ключ со случайным содержимым.&lt;/p&gt;&lt;p&gt;Храните его в надёжном месте и не теряйте, иначе доступ к базе будет заблокирован.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Legacy key file format</source>
-        <translation>Устаревший формат ключевого файла</translation>
-    </message>
-    <message>
         <source>Error loading the key file '%1'
 Message: %2</source>
         <translation>Ошибка загрузки ключевого файла &apos;%1&apos;
@@ -4386,13 +4394,12 @@ Are you sure you want to continue with this file?</source>
 Продолжить использовать выбранный файл?</translation>
     </message>
     <message>
-        <source>You are using a legacy key file format which may become
-unsupported in the future.
-
-Generate a new key file in the database security settings.</source>
-        <translation>Вы используете файл-ключ устаревшего формата, поддержка которого может быть прекращена в будущем.
-
-По возможности создайте новый файл-ключ используя раздел параметров безопасности базы данных.</translation>
+        <source>Old key file format</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>You selected a key file in an old format which KeePassXC&lt;br&gt;may stop supporting in the future.&lt;br&gt;&lt;br&gt;Please consider generating a new key file instead.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4836,6 +4843,38 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>You must restart the application to apply this setting. Would you like to restart now?</source>
         <translation>Требуется перезапуск приложения для применения этого параметра. Выполнить перезапуск сейчас?</translation>
+    </message>
+    <message>
+        <source>Perform Auto-Type Sequence</source>
+        <translation>Выполнить последовательность автоматического ввода</translation>
+    </message>
+    <message>
+        <source>{USERNAME}</source>
+        <translation>{USERNAME}</translation>
+    </message>
+    <message>
+        <source>{USERNAME}{ENTER}</source>
+        <translation>{USERNAME}{ENTER}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}</source>
+        <translation>{PASSWORD}</translation>
+    </message>
+    <message>
+        <source>{PASSWORD}{ENTER}</source>
+        <translation>{PASSWORD}{ENTER}</translation>
+    </message>
+    <message>
+        <source>Always on Top</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Hide Usernames</source>
+        <translation>Скрыть логины</translation>
+    </message>
+    <message>
+        <source>Hide Passwords</source>
+        <translation>Скрыть пароли</translation>
     </message>
 </context>
 <context>
@@ -5322,10 +5361,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>Отличный</translation>
     </message>
     <message>
-        <source>ExtendedASCII</source>
-        <translation>Расширенная ASCII</translation>
-    </message>
-    <message>
         <source>Switch to advanced mode</source>
         <translation>В расширенный режим</translation>
     </message>
@@ -5334,56 +5369,20 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>Дополнительно</translation>
     </message>
     <message>
-        <source>A-Z</source>
-        <translation>A-Z</translation>
-    </message>
-    <message>
-        <source>a-z</source>
-        <translation>a-z</translation>
-    </message>
-    <message>
-        <source>0-9</source>
-        <translation>0-9</translation>
-    </message>
-    <message>
         <source>Braces</source>
         <translation>Скобки</translation>
-    </message>
-    <message>
-        <source>{[(</source>
-        <translation>{[(</translation>
     </message>
     <message>
         <source>Punctuation</source>
         <translation>Знаки препинания</translation>
     </message>
     <message>
-        <source>.,:;</source>
-        <translation>.,:;</translation>
-    </message>
-    <message>
         <source>Quotes</source>
         <translation>Кавычки</translation>
     </message>
     <message>
-        <source>&quot; &apos;</source>
-        <translation>&quot; &apos;</translation>
-    </message>
-    <message>
-        <source>&lt;*+!?=</source>
-        <translation>&lt;*+!?=</translation>
-    </message>
-    <message>
-        <source>\_|-/</source>
-        <translation>\_|-/</translation>
-    </message>
-    <message>
         <source>Logograms</source>
         <translation>Логограммы</translation>
-    </message>
-    <message>
-        <source>#$%&amp;&amp;@^`~</source>
-        <translation>#$%&amp;&amp;@^`~</translation>
     </message>
     <message>
         <source>Character set to exclude from generated password</source>
@@ -5498,12 +5497,12 @@ Expect some bugs and minor issues, this version is not meant for production use.
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
         <source>Regenerate password (%1)</source>
         <translation>Создать заново (%1)</translation>
+    </message>
+    <message>
+        <source>Special Characters</source>
+        <translation>Специальные символы</translation>
     </message>
 </context>
 <context>
@@ -5742,16 +5741,6 @@ Expect some bugs and minor issues, this version is not meant for production use.
     <message>
         <source>Perform advanced analysis on the password.</source>
         <translation>Выполнить расширенный анализ пароля.</translation>
-    </message>
-    <message>
-        <source>WARNING: You are using a legacy key file format which may become
-unsupported in the future.
-
-Please consider generating a new key file.</source>
-        <translation>ВНИМАНИЕ: Вы используете файл-ключ устаревшего формата, поддержка которого 
-может быть прекращена в будущем.
-
-По возможности создайте новый ключевой файл.</translation>
     </message>
     <message>
         <source>
@@ -6141,10 +6130,6 @@ Available commands:
         <translation>%1: (строка, столбец) %2,%3</translation>
     </message>
     <message>
-        <source>Argon2 (KDBX 4 – recommended)</source>
-        <translation>Argon2 (KDBX 4 – рекомендуется)</translation>
-    </message>
-    <message>
         <source>AES-KDF (KDBX 4)</source>
         <translation>AES-KDF (KDBX 4)</translation>
     </message>
@@ -6233,10 +6218,6 @@ Available commands:
     <message>
         <source>read password of the database from stdin</source>
         <translation>читать пароли базы данных с stdin</translation>
-    </message>
-    <message>
-        <source>Parent window handle</source>
-        <translation>Дескриптор родительского окна</translation>
     </message>
     <message>
         <source>Another instance of KeePassXC is already running.</source>
@@ -6717,15 +6698,11 @@ Kernel: %3 %4</source>
     <message>
         <source>All clipping programs failed. Tried %1
 </source>
-        <translation type="unfinished"/>
+        <translation>Ни одна программа копирования не сработала. Пробовали %1</translation>
     </message>
     <message>
         <source>AES (%1 rounds)</source>
         <translation>AES (%1 раунд(а))</translation>
-    </message>
-    <message>
-        <source>Argon2 (%1 rounds, %2 KB)</source>
-        <translation>Argon2 (%1 раунда(а), %2 КБ)</translation>
     </message>
     <message>
         <source>AES 256-bit</source>
@@ -6752,6 +6729,49 @@ Kernel: %3 %4</source>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation><numerusform>%1 с</numerusform><numerusform>%1 с</numerusform><numerusform>%1 с</numerusform><numerusform>%1 с</numerusform></translation>
+    </message>
+    <message>
+        <source>path to a custom local config file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>WARNING: You are using an old key file format which KeePassXC may
+stop supporting in the future.
+
+Please consider generating a new key file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2%1 (%2 rounds, %3 KB)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2d (KDBX 4 – recommended)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Argon2id (KDBX 4)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TOTP</source>
+        <translation>TOTP</translation>
+    </message>
+    <message>
+        <source>Icon</source>
+        <translation>Значок</translation>
+    </message>
+    <message>
+        <source>Unsupported key file version: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Checksum mismatch! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unexpected key file data! Key file may be corrupt.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -6855,7 +6875,7 @@ Kernel: %3 %4</source>
     </message>
     <message>
         <source>Reason</source>
-        <translation>Причика</translation>
+        <translation>Причина</translation>
     </message>
     <message>
         <source>Edit Entry...</source>
@@ -7175,10 +7195,6 @@ Kernel: %3 %4</source>
     <message>
         <source>Search</source>
         <translation>Поиск</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
     </message>
     <message>
         <source>Limit search to selected group</source>

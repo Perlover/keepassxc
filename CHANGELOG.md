@@ -1,5 +1,99 @@
 # Changelog
 
+## 2.6.4 (2021-01-31)
+
+### Added
+
+- Automatically adapt to light/dark system theme changes (Windows/macOS only) [#6034]
+
+### Changed
+
+- Show window title as tooltip on system tray [#5948]
+- Compress Snap release as LZO for faster initial startup [#5877]
+- Password generator: Set maximum selectable password length to 999 [#5937]
+
+### Fixed
+
+- Fix crash on app close when using SSH agent [#5935]
+- Fix KDF selection showing wrong item when using Argon2id [#5923]
+- Automatically close About dialog on database lock if it is still open [#5947]
+- Linux: Fix automatic launch at system startup with AppImages [#5901]
+- Linux: Fix click-to-move on empty area activating when using menus [#5971]
+- Linux: Try multiple times to show tray icon if tray is not ready yet [#5948]
+- macOS: Fix KeePassXC blocking clean shutdown [#6002]
+
+## 2.6.3 (2021-01-12)
+
+### Added
+
+- Support Argon2id KDF [#5778]
+- Support XMLv2 key files [#5798]
+
+### Changed
+
+- Improve CSV Import/Export, include time fields and TOTP [#5346]
+- Support empty area dragging of the application window [#5860]
+- Display default Auto-Type sequence in preview pane [#5654]
+- Remove strict length limit on generated passwords [#5748]
+- Hide key file path by default when unlocking database [#5779]
+- Document browser extension use with Edge in managed mode [#5692]
+- Windows: Prevent clipboard history and cloud sync [#5853]
+- macOS: Update the application icon to Big Sur styling [#5851]
+
+### Fixed
+
+- Re-select previously selected entry on database unlock [#5559]
+- Properly save special character choice in password generator [#5610]
+- Fix crash in browser integration with multiple similar entries [#5653]
+- Remove offset on username field in classic theme [#5788]
+- Ensure entry history is copied when drag/dropping entries and groups [#5817]
+- Close modal dialogs when database is locked [#5820]
+- Prevent crash when KeeShare modifies an entry that is currently being edited [#5827]
+- Improve preview of entry attributes [#5834]
+- Always activate/focus database open dialog preventing mistype [#5878]
+- Reports: fix calculation of average password length [#5862]
+- Linux: Delay startup on login to correct tray icon issues [#5724]
+
+## 2.6.2 (2020-10-21)
+
+### Added
+
+- Add option to keep window always on top to view menu [#5542]
+- Move show/hide usernames and passwords to view menu [#5542]
+- Add command line options and environment variables for changing the config locations [#5452]
+- Include TOTP settings in CSV import/export and add support for ISO datetimes [#5346]
+
+### Changed
+
+- Mask sensitive information in command execution confirmation prompt [#5542]
+- SSH Agent: Avoid shortcut conflict on macOS by changing "Add key" to Ctrl+H on all platforms [#5484]
+
+### Fixed
+
+- Prevent data loss with drag and drop between databases [#5536]
+- Fix crash when toggling Capslock rapidly [#5545]
+- Don't mark URL references as invalid URL [#5380]
+- Reset entry preview after search [#5483]
+- Set Qt::Dialog flag on database open dialog [#5356]
+- Fix sorting of database report columns [#5426]
+- Fix IfDevice matching logic [#5344]
+- Fix layout issues and a stray scrollbar appearing on top of the entry edit screen [#5424]
+- Fix tabbing into the notes field [#5424]
+- Fix password generator ignoring settings on load [#5340]
+- Restore natural entry sort order on application load [#5438]
+- Fix paperclip and TOTP columns not saving state [#5327]
+- Enforce fixed password font in entry preview [#5454]
+- Add scrollbar when new database wizard exceeds screen size [#5560]
+- Do not mark database as modified when viewing Auto-Type associations [#5542]
+- CLI: Fix two heap-use-after-free crashes [#5368,#5470]
+- Browser: Fix key exchange not working with multiple simultaneous users on Windows [#5485]
+- Browser: Fix entry retrieval when "only best matching" is enabled [#5316]
+- Browser: Ignore recycle bin on KeePassHTTP migration [#5481]
+- KeeShare: Fix import crash [#5542]
+- macOS: Fix toolbar theming and breadcrumb display issues [#5482]
+- macOS: Fix file dialog randomly closing [#5479]
+- macOS: Fix being unable to select OPVault files for import [#5341]
+
 ## 2.6.1 (2020-08-19)
 
 ### Added
